@@ -6,7 +6,7 @@ import { Box } from "@mui/material"
 const ProjectCard = ({ img, title, uri, handleImageClick }) => {
   return (
     <S.Wrapper>
-      <CustomImage onClick={handleImageClick} img={img} />
+      <S.CardImage onClick={handleImageClick} img={img} />
       <Box
         sx={{
           display: "flex",

@@ -61,7 +61,7 @@ const ProjectsGrid = () => {
   const [isOpenLightBox, setIsOpenLightbox] = useState(false)
   const [photoIndex, setPhotoIndex] = useState(0)
   const images = projectsToShow.map(({ featuredImage }) =>
-    getSrc(featuredImage.node.localFile)
+    getSrc(featuredImage?.node?.localFile)
   )
 
   console.log("projectsToShow", projectsToShow)

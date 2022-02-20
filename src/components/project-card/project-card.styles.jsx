@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Typography from "@mui/material/Typography"
 import CustomLink from "../custom-link/custom-link.component"
+import CustomImage from "../custom-image/custom-image.component";
 
 export const Wrapper = styled.div`
   .gatsby-image-wrapper {
@@ -17,4 +18,12 @@ export const Title = styled(Typography)`
 export const ViewMoreLink = styled(CustomLink)`
   font-size: ${({ theme }) => theme.typography.pxToRem(14)};
   color: black;
+`
+
+export const CardImage = styled(CustomImage)`
+  transition: 0.5s all ease-in-out;
+  filter: grayscale(1);
+  &:hover {
+    filter: grayscale(0);
+  }
 `

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import * as S from "./projects-grid.styles"
-import { Tab } from "@mui/material"
 import { graphql, useStaticQuery } from "gatsby"
 import Masonry from "react-masonry-css"
 import ProjectCard from "../../components/project-card/project-card.component"
@@ -101,6 +100,7 @@ const ProjectsGrid = () => {
             key={id}
             img={featuredImage?.node}
             title={title}
+            imageSize={index % 2 === 0 ? "large" : "small"}
             handleImageClick={() => {
               setIsOpenLightbox(true)
               setPhotoIndex(index)

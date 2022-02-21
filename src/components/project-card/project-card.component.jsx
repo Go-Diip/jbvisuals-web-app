@@ -3,10 +3,10 @@ import * as S from "./project-card.styles.jsx"
 import CustomImage from "../custom-image/custom-image.component"
 import { Box } from "@mui/material"
 
-const ProjectCard = ({ img, title, uri, handleImageClick }) => {
+const ProjectCard = ({ img, title, uri, handleImageClick, imageSize }) => {
   return (
     <S.Wrapper>
-      <S.CardImage onClick={handleImageClick} img={img} />
+      <S.CardImage className={imageSize} onClick={handleImageClick} img={img} />
       <Box
         sx={{
           display: "flex",

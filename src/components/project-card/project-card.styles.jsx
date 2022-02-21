@@ -22,6 +22,13 @@ export const ViewMoreLink = styled(CustomLink)`
 
 export const CardImage = styled(CustomImage)`
   transition: 0.5s all ease-in-out;
+  &.small {
+    height: 200px;
+  }
+
+  &.large {
+    height: 300px;
+  }
   filter: grayscale(1);
   &:hover {
     filter: grayscale(0);

@@ -8,6 +8,7 @@ yarn-error.log*
 .vscode
 .wordpress-cache
 .template-cache
+.history
 
 # Runtime data
 pids

@@ -2,6 +2,7 @@ import React from "react"
 import * as S from "./sidebar.styles.jsx"
 import Typography from "@mui/material/Typography"
 import CustomLink from "../custom-link/custom-link.component"
+import { Fade } from "react-awesome-reveal"
 
 const Sidebar = () => {
   return (
@@ -12,9 +13,11 @@ const Sidebar = () => {
         <S.LinkItem url="/contact/">Contact</S.LinkItem>
       </S.TopWrapper>
       <S.MiddleWrapper>
-        <CustomLink url="/">
-          <img src="logo.png" alt="Logo" />
-        </CustomLink>
+        <Fade direction="up" triggerOnce>
+          <CustomLink url="/">
+            <img src="logo.png" alt="Logo" />
+          </CustomLink>
+        </Fade>
       </S.MiddleWrapper>
       <S.BottomWrapper>
         <Typography>

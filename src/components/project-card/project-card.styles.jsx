@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Typography from "@mui/material/Typography"
 import CustomLink from "../custom-link/custom-link.component"
-import CustomImage from "../custom-image/custom-image.component";
+import CustomImage from "../custom-image/custom-image.component"
 
 export const Wrapper = styled.div`
   .gatsby-image-wrapper {
@@ -27,7 +27,7 @@ export const CardImage = styled(CustomImage)`
   }
 
   &.large {
-    height: 300px;
+    height: 500px;
   }
   filter: grayscale(1);
   &:hover {

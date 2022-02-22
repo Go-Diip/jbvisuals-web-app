@@ -7,6 +7,7 @@ import { getSrc } from "gatsby-plugin-image"
 
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
+import { Container } from "@mui/material"
 
 const ProjectsGrid = () => {
   const projectsQuery = useStaticQuery(graphql`
@@ -63,8 +64,6 @@ const ProjectsGrid = () => {
     getSrc(featuredImage?.node?.localFile)
   )
 
-  console.log("projectsToShow", projectsToShow)
-
   useEffect(() => {
     if (activeCategory === "all") {
       setProjectsToShow(allProjects)
@@ -80,35 +79,38 @@ const ProjectsGrid = () => {
   }, [activeCategory])
   return (
     <S.Wrapper>
-      <S.CustomTabs
-        centered
-        value={activeCategory}
-        onChange={(e, newVal) => setActiveCategory(newVal)}
-      >
-        <S.CustomTab value="all" label="All" />
-        {allCategories.map(({ databaseId, name }) => (
-          <S.CustomTab key={databaseId} value={databaseId} label={name} />
-        ))}
-      </S.CustomTabs>
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="masonry-grid"
-        columnClassName="masonry-grid_column"
-      >
-        {projectsToShow.map(({ id, featuredImage, title, uri }, index) => (
-          <ProjectCard
-            key={id}
-            img={featuredImage?.node}
-            title={title}
-            imageSize={index % 2 === 0 ? "large" : "small"}
-            handleImageClick={() => {
-              setIsOpenLightbox(true)
-              setPhotoIndex(index)
-            }}
-            uri={uri}
-          />
-        ))}
-      </Masonry>
+      <Container maxWidth="xl">
+        <S.CustomTabs
+          centered
+          value={activeCategory}
+          onChange={(e, newVal) => setActiveCategory(newVal)}
+        >
+          <S.CustomTab value="all" label="All" />
+          {allCategories.map(({ databaseId, name }) => (
+            <S.CustomTab key={databaseId} value={databaseId} label={name} />
+          ))}
+        </S.CustomTabs>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="masonry-grid"
+          columnClassName="masonry-grid_column"
+        >
+          {projectsToShow.map(({ id, featuredImage, title, uri }, index) => (
+            <ProjectCard
+              key={id}
+              img={featuredImage?.node}
+              title={title}
+              imageSize={index % 2 === 0 ? "large" : "small"}
+              handleImageClick={() => {
+                setIsOpenLightbox(true)
+                setPhotoIndex(index)
+              }}
+              uri={uri}
+            />
+          ))}
+        </Masonry>
+      </Container>
+
       {isOpenLightBox && (
         <Lightbox
           mainSrc={images[photoIndex]}

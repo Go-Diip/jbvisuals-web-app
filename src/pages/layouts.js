@@ -44,14 +44,7 @@ const Layouts = () => {
       />
 
       <LayoutTitle>HomeIntroText</LayoutTitle>
-      <HomeIntroText
-        text={`Helo, this is jbviuals <br> we help translate your
-          <span class="typing-words">
-              <span>public space design</span>
-              <span>interior design</span>
-              <span>architecture</span>
-          </span><br> into a real visual concept`}
-      />
+      <HomeIntroText />
 
       <LayoutTitle>MiscContent</LayoutTitle>
       <MiscContent content={`<p>Some content Here</p>`} />

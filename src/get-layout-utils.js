@@ -4,6 +4,8 @@ import HomeHero from "./layouts/HomeHero"
 import HomeIntroText from "./layouts/HomeIntroText"
 import ProjectsGrid from "./layouts/ProjectsGrid"
 import ContactRow from "./layouts/ContactRow"
+import InfoRow from "./layouts/InfoRow"
+import CenteredRow from "./layouts/CenteredRow"
 
 export const getPageLayout = layout => {
   const layoutName = layout?.fieldGroupName?.split("_").pop().trim()
@@ -19,5 +21,9 @@ export const getPageLayout = layout => {
       return <ProjectsGrid {...layout} />
     case "ContactRow":
       return <ContactRow {...layout} />
+    case "InfoRow":
+      return <InfoRow {...layout} />
+    case "Centered":
+      return <CenteredRow {...layout} />
   }
 }

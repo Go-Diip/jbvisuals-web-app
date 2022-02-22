@@ -16,6 +16,7 @@ export const CustomTab = styled(Tab)`
 `
 
 export const Wrapper = styled(SectionWrapper)`
+  padding: 0;
   .masonry-grid {
     display: flex;
     margin-left: -16px; /* gutter size offset */

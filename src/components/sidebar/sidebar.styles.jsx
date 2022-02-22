@@ -23,8 +23,13 @@ export const LinkItem = styled(CustomLink)`
   color: ${({ theme }) => theme.palette.main};
   display: block;
   text-align: center;
+  transition: 0.3s all ease;
+  font-weight: 400;
   :not(:first-child) {
     padding-top: 1em;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.palette.secondary.main};
   }
 `
 

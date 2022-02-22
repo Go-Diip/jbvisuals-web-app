@@ -23,7 +23,7 @@ export const getPageLayout = layout => {
       return <ContactRow {...layout} />
     case "InfoRow":
       return <InfoRow {...layout} />
-    case "Centered":
+    case "CenteredRow":
       return <CenteredRow {...layout} />
   }
 }

@@ -3,7 +3,7 @@ import * as S from "./info-row.styles"
 import { Container, Grid } from "@mui/material"
 import parse from "html-react-parser"
 
-const InfoRow = ({ name, role, description, image, reverse }) => {
+const InfoRow = ({ name, role, content, image, reverse }) => {
   return (
     <S.Wrapper>
       <Container>
@@ -11,10 +11,8 @@ const InfoRow = ({ name, role, description, image, reverse }) => {
           <Grid item sm={12} md={6}>
             <S.InfoWrapper>
               {name && <S.Text>{name}</S.Text>}
-              {role && <S.Text>{role}</S.Text>}
-              {description && (
-                <S.Description>{parse(description)}</S.Description>
-              )}
+              {role && <S.Text style={{ marginBottom: "0" }}>{role}</S.Text>}
+              {content && <S.Description>{parse(content)}</S.Description>}
             </S.InfoWrapper>
           </Grid>
           <Grid item sm={12} md={6}>

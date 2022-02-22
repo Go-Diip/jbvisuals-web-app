@@ -11,6 +11,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
 // Create all pages
 const createPages = require("./create/createPages")
 const createPosts = require("./create/createPosts")
+const createProjects = require("./create/createProjects")
 
 exports.createPages = async ({ graphql, actions, reporter }, options) => {
   const { createRedirect } = actions
@@ -24,5 +25,6 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
   // })
 
   await createPages({ actions, graphql, reporter }, options)
-  // await createPosts({ actions, graphql, reporter }, options)
+  await createPosts({ actions, graphql, reporter }, options)
+  await createProjects({ actions, graphql, reporter }, options)
 }

@@ -6,7 +6,7 @@ import { Container } from "@mui/material"
 const CenteredRow = ({ content }) => {
   return (
     <S.Wrapper>
-      <Container>
+      <Container maxWidth="sm">
         {content && <S.Content>{parse(content)}</S.Content>}
       </Container>
     </S.Wrapper>

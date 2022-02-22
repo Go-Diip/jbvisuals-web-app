@@ -41,10 +41,8 @@ export const SeeMoreLink = styled(CustomLink)`
   color: white;
   border-bottom: 1px solid white !important;
   font-size: 1rem;
-  margin-left: 2em;
 `
 
 export const LinkWrapper = styled.div`
-  display: flex;
-  align-items: center;
+  padding: 1em 0;
 `

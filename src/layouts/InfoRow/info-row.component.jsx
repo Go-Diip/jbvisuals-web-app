@@ -2,7 +2,6 @@ import React from "react"
 import * as S from "./info-row.styles"
 import { Container, Grid } from "@mui/material"
 import parse from "html-react-parser"
-import CustomImage from "../../components/custom-image/custom-image.component"
 
 const InfoRow = ({ name, role, description, image, reverse }) => {
   return (

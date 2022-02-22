@@ -7,6 +7,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import HomeIntroText from "../layouts/HomeIntroText"
 import ProjectsGrid from "../layouts/ProjectsGrid"
 import InfoRow from "../layouts/InfoRow"
+import CenteredRow from "../layouts/CenteredRow"
 
 const Layouts = () => {
   const staticQuery = useStaticQuery(graphql`
@@ -71,6 +72,9 @@ const Layouts = () => {
         image={staticQuery.placeholder}
         description='<p>"Architectural visualization is an open field for experimentation, there is a thin line between the real and the imaginary. What we see with our eyes is real, although it may not yet exist in the material world."<br><br>Julia is an architect who is very passionate and inspired by art and photography. For her, each project is unique, so she does her best to transmit them to the world in their own special way.</p>'
       />
+
+      <LayoutTitle>CenteredRow</LayoutTitle>
+      <CenteredRow content='<p>"Architectural visualization is an open field for experimentation, there is a thin line between the real and the imaginary. What we see with our eyes is real, although it may not yet exist in the material world."<br><br>Julia is an architect who is very passionate and inspired by art and photography. For her, each project is unique, so she does her best to transmit them to the world in their own special way.</p>' />
     </Layout>
   )
 }

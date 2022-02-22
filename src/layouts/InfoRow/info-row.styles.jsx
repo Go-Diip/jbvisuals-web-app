@@ -13,6 +13,7 @@ export const Text = styled.span`
 `
 
 export const InfoWrapper = styled.div`
+  color: ${({ theme }) => theme.palette.text.primary};
   display: flex;
   flex-direction: column;
   justify-content: center;

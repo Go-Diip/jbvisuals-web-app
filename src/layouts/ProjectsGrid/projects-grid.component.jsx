@@ -8,6 +8,7 @@ import { getSrc } from "gatsby-plugin-image"
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
 import { Container } from "@mui/material"
+import parse from "html-react-parser"
 
 const ProjectsGrid = () => {
   const projectsQuery = useStaticQuery(graphql`
@@ -114,7 +115,19 @@ const ProjectsGrid = () => {
       {isOpenLightBox && (
         <Lightbox
           mainSrc={images[photoIndex]}
-          imageTitle={projectsToShow[photoIndex].title}
+          // imageTitle={parse('<a id="replace">text</a>', {
+          //   replace: domNode => {
+          //     if (domNode.attribs && domNode.attribs.id === "replace") {
+          //       return (
+          //         <S.LinkWrapper>
+          //           <S.SeeMoreLink url={projectsToShow[photoIndex].uri}>
+          //             {projectsToShow[photoIndex].title}
+          //           </S.SeeMoreLink>
+          //         </S.LinkWrapper>
+          //       )
+          //     }
+          //   },
+          // })}
           nextSrc={images[(photoIndex + 1) % images.length]}
           prevSrc={images[(photoIndex + images.length - 1) % images.length]}
           onCloseRequest={() => setIsOpenLightbox(false)}
@@ -124,6 +137,19 @@ const ProjectsGrid = () => {
           onMoveNextRequest={() =>
             setPhotoIndex((photoIndex + 1) % images.length)
           }
+          imageCaption={parse('<a id="replace">text</a>', {
+            replace: domNode => {
+              if (domNode.attribs && domNode.attribs.id === "replace") {
+                return (
+                  <S.LinkWrapper>
+                    <S.SeeMoreLink url={projectsToShow[photoIndex].uri}>
+                      {projectsToShow[photoIndex].title}
+                    </S.SeeMoreLink>
+                  </S.LinkWrapper>
+                )
+              }
+            },
+          })}
         />
       )}
     </S.Wrapper>

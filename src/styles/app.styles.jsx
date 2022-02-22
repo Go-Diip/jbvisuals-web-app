@@ -192,6 +192,10 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     flex-direction: column;
   }
+
+  .ril__caption {
+    justify-content: center;
+  }
   
   ${wordpress}
   ${snipcart}

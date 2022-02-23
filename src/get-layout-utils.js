@@ -6,6 +6,7 @@ import ProjectsGrid from "./layouts/ProjectsGrid"
 import ContactRow from "./layouts/ContactRow"
 import InfoRow from "./layouts/InfoRow"
 import CenteredRow from "./layouts/CenteredRow"
+import ContactSection from "./layouts/ContactSection"
 
 export const getPageLayout = layout => {
   const layoutName = layout?.fieldGroupName?.split("_").pop().trim()
@@ -25,5 +26,7 @@ export const getPageLayout = layout => {
       return <InfoRow {...layout} />
     case "CenteredRow":
       return <CenteredRow {...layout} />
+    case "ContactSection":
+      return <ContactSection {...layout} />
   }
 }

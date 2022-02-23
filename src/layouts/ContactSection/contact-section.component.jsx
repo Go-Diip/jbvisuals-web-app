@@ -1,6 +1,7 @@
 import React from "react"
 import * as S from "./contact-section.styles"
 import { Container, Grid } from "@mui/material"
+import ContactForm from "../../components/contact-form/contact-form.component"
 
 const ContactSection = ({ topDescription, bottomDescription }) => {
   return (
@@ -37,6 +38,7 @@ const ContactSection = ({ topDescription, bottomDescription }) => {
               <S.RightWrapper>
                 <S.Title>Drop Us a Line</S.Title>
                 <S.Line />
+                <ContactForm />
               </S.RightWrapper>
             </S.GridWrapper>
           </Grid>

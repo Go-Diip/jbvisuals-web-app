@@ -66,6 +66,9 @@ export const query = graphql`
           ... on WpPage_Pagebuilder_Layouts_CenteredRow {
             ...CenteredRow
           }
+          ... on WpPage_Pagebuilder_Layouts_ContactSection {
+            ...ContactSection
+          }
         }
         pageConfiguration {
           hideFooter

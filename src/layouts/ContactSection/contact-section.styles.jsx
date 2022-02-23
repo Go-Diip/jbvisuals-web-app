@@ -2,10 +2,12 @@ import styled from "styled-components"
 import SectionWrapper from "../../components/section-wrapper/section-wrapper.component"
 import { Typography } from "@mui/material"
 
-export const Wrapper = styled(SectionWrapper)``
+export const Wrapper = styled(SectionWrapper)`
+  padding-top: 0;
+`
 
 export const ContentWrapper = styled.div`
-  padding: 3em 0;
+  padding: 8em 0;
   text-align: center;
 `
 

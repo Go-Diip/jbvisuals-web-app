@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../../components/layout"
 import { graphql } from "gatsby"
+import ProjectWrapper from "../../components/project-wrapper/project-wrapper.component"
 
 export const query = graphql`
   query ProjectQuery($id: String!) {
@@ -14,6 +15,21 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+      }
+      projectBuilder {
+        architect
+        location
+        images {
+          image {
+            altText
+            sourceUrl
+            localFile {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+              }
             }
           }
         }
@@ -55,11 +71,11 @@ export const query = graphql`
 `
 
 const Project = ({ data }) => {
-  const { seo, title, content, featuredImage, date } = data.wpProject
+  const { seo, title, content, featuredImage, date, projectBuilder } =
+    data.wpProject
   return (
     <Layout seo={seo}>
-      {title}
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <ProjectWrapper title={title} {...projectBuilder} />
       {/*<Img fluid={featuredImage.imageFile.childImageSharp.fluid} />*/}
     </Layout>
   )

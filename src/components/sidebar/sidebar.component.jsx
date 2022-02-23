@@ -9,7 +9,7 @@ const Sidebar = () => {
   return (
     <S.Wrapper>
       <S.TopWrapper>
-        <S.LinkItem>Our Work</S.LinkItem>
+        <S.LinkItem url="/#work-section">Our Work</S.LinkItem>
         <S.LinkItem url="/about/">About</S.LinkItem>
         <S.LinkItem url="/contact/">Contact</S.LinkItem>
       </S.TopWrapper>

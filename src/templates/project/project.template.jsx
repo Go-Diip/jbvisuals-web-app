@@ -71,7 +71,7 @@ export const query = graphql`
 `
 
 const Project = ({ data }) => {
-  const { seo, title, content, featuredImage, date, projectBuilder, uri } =
+  const { seo, title, content, featuredImage, date, projectBuilder, uri, id } =
     data.wpProject
   return (
     <Layout seo={seo}>

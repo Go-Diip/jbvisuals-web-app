@@ -8,7 +8,7 @@ export const CustomTabs = styled(Tabs)`
 `
 
 export const CustomTab = styled(Tab)`
-  color: black;
+  color: black !important;
   opacity: 0.4;
 
   &.Mui-selected {

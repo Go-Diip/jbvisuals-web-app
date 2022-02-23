@@ -1,7 +1,8 @@
 import React from "react"
 import * as S from "./project-wrapper.styles"
 import { Container } from "@mui/material"
-import ProjectsGallery from "../projects-gallery/projects-gallery.component"
+import ProjectGallery from "../project-gallery/project-gallery.component"
+import PropTypes from "prop-types"
 
 const ProjectWrapper = ({ title, location, architect, images }) => {
   return (
@@ -9,10 +10,17 @@ const ProjectWrapper = ({ title, location, architect, images }) => {
       <Container>
         {title && <S.Title>{title}</S.Title>}
         {location && <S.Location>{location}</S.Location>}
-        <ProjectsGallery images={images} />
+        <ProjectGallery images={images} />
       </Container>
     </S.Wrapper>
   )
+}
+
+ProjectWrapper.propTypes = {
+  title: PropTypes.string,
+  location: PropTypes.string,
+  architect: PropTypes.string,
+  images: PropTypes.array,
 }
 
 export default ProjectWrapper

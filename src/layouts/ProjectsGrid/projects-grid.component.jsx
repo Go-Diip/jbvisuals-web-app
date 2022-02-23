@@ -94,7 +94,7 @@ const ProjectsGrid = () => {
               <S.CustomTab key={databaseId} value={databaseId} label={name} />
             ))}
           </S.CustomTabs>
-          <SRLWrapper>
+          <SRLWrapper options={{ caption: { showCaption: false } }}>
             <Masonry
               breakpointCols={breakpointColumnsObj}
               className="masonry-grid"

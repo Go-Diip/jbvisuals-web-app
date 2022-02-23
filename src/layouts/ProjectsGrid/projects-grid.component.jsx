@@ -99,17 +99,19 @@ const ProjectsGrid = () => {
             columnClassName="masonry-grid_column"
           >
             {projectsToShow.map(({ id, featuredImage, title, uri }, index) => (
-              <ProjectCard
-                key={id}
-                img={featuredImage?.node}
-                title={title}
-                imageSize={index % 2 === 0 ? "large" : "small"}
-                handleImageClick={() => {
-                  setIsOpenLightbox(true)
-                  setPhotoIndex(index)
-                }}
-                uri={uri}
-              />
+              <Fade>
+                <ProjectCard
+                  key={id}
+                  img={featuredImage?.node}
+                  title={title}
+                  imageSize={index % 2 === 0 ? "large" : "small"}
+                  handleImageClick={() => {
+                    setIsOpenLightbox(true)
+                    setPhotoIndex(index)
+                  }}
+                  uri={uri}
+                />
+              </Fade>
             ))}
           </Masonry>
         </Container>

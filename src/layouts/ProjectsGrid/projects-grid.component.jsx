@@ -10,6 +10,7 @@ import "react-image-lightbox/style.css"
 import { Container } from "@mui/material"
 import parse from "html-react-parser"
 import { Fade } from "react-awesome-reveal"
+import { SRLWrapper } from "simple-react-lightbox"
 
 const ProjectsGrid = () => {
   const projectsQuery = useStaticQuery(graphql`
@@ -93,27 +94,27 @@ const ProjectsGrid = () => {
               <S.CustomTab key={databaseId} value={databaseId} label={name} />
             ))}
           </S.CustomTabs>
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="masonry-grid"
-            columnClassName="masonry-grid_column"
-          >
-            {projectsToShow.map(({ id, featuredImage, title, uri }, index) => (
-              <Fade>
-                <ProjectCard
-                  key={id}
-                  img={featuredImage?.node}
-                  title={title}
-                  imageSize={index % 2 === 0 ? "large" : "small"}
-                  handleImageClick={() => {
-                    setIsOpenLightbox(true)
-                    setPhotoIndex(index)
-                  }}
-                  uri={uri}
-                />
-              </Fade>
-            ))}
-          </Masonry>
+          <SRLWrapper>
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="masonry-grid"
+              columnClassName="masonry-grid_column"
+            >
+              {projectsToShow.map(
+                ({ id, featuredImage, title, uri }, index) => (
+                  <Fade>
+                    <ProjectCard
+                      key={id}
+                      img={featuredImage?.node}
+                      title={title}
+                      imageSize={index % 2 === 0 ? "large" : "small"}
+                      uri={uri}
+                    />
+                  </Fade>
+                )
+              )}
+            </Masonry>
+          </SRLWrapper>
         </Container>
       </Fade>
 

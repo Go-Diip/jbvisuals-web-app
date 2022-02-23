@@ -12,16 +12,14 @@ const ProjectWrapper = ({ title, location, architect, images, uri }) => {
   return (
     <S.Wrapper>
       <Container>
-        <Fade direction={"down"} triggerOnce>
-          {title && <S.Title>{title}</S.Title>}
-          {location && <S.Location>{location}</S.Location>}
-        </Fade>
+        {title && <S.Title>{title}</S.Title>}
+        {location && <S.Location>{location}</S.Location>}
         <Grid container>
           <Grid item xs={12} md={8}>
             <ProjectGallery images={images} />
           </Grid>
           <Grid item xs={12} md={4}>
-            <Fade>
+            <Fade triggerOnce>
               <S.SocialWrapper>
                 {architect && <S.Architect>Architect: {architect}</S.Architect>}
                 <S.IconsWrapper>

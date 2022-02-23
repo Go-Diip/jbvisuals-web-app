@@ -13,6 +13,7 @@ import Header from "../components/header/header.component"
 import { AppContainer } from "../styles/app.styles"
 import Footer from "./footer/footer.component"
 import Sidebar from "./sidebar/sidebar.component"
+import SimpleReactLightbox from "simple-react-lightbox"
 
 const Layout = ({ seo, children, isHome }) => {
   return (
@@ -23,7 +24,9 @@ const Layout = ({ seo, children, isHome }) => {
       <AppContainer>
         <Sidebar isHome={isHome} />
         <div className="contentWrapper">
-          <main>{children}</main>
+          <main>
+            <SimpleReactLightbox>{children}</SimpleReactLightbox>
+          </main>
           <Footer />
         </div>
       </AppContainer>

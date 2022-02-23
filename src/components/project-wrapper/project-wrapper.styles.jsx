@@ -24,3 +24,34 @@ export const Location = styled.span`
   letter-spacing: 0.7px;
   line-height: 28px;
 `
+
+export const SocialWrapper = styled.div`
+  position: fixed;
+  padding: 4em;
+`
+
+export const Architect = styled.span`
+  font-size: ${({ theme }) => theme.typography.pxToRem(16)};
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  line-height: 28px;
+`
+
+export const IconsWrapper = styled.div`
+  text-align: left;
+  margin-top: 2em;
+  svg {
+    fill: ${({ theme }) => theme.palette.text.content};
+    width: 26px;
+    transition: all 0.3s ease;
+    height: auto;
+  }
+  a {
+    margin-right: 1em;
+    &:hover {
+      svg {
+        fill: black;
+      }
+    }
+  }
+`

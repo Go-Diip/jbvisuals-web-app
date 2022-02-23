@@ -9,6 +9,7 @@ import ProjectsGrid from "../layouts/ProjectsGrid"
 import InfoRow from "../layouts/InfoRow"
 import CenteredRow from "../layouts/CenteredRow"
 import ContactRow from "../layouts/ContactRow"
+import ContactSection from "../layouts/ContactSection"
 
 const Layouts = () => {
   const staticQuery = useStaticQuery(graphql`
@@ -37,9 +38,9 @@ const Layouts = () => {
       <LayoutTitle>HomeHero</LayoutTitle>
       <HomeHero
         images={[
-          staticQuery.placeholder,
-          staticQuery.placeholder2,
-          staticQuery.placeholder,
+          { image: staticQuery.placeholder },
+          { image: staticQuery.placeholder2 },
+          { image: staticQuery.placeholder },
         ]}
       />
 
@@ -72,6 +73,12 @@ const Layouts = () => {
 
       <LayoutTitle>ContactRow</LayoutTitle>
       <ContactRow title="Let's Work Together!" />
+
+      <LayoutTitle>Contact Section</LayoutTitle>
+      <ContactSection
+        topDescription="We work worldwide, it doesn't matter where you are, write to us to start collaborating."
+        bottomDescription="and we´ll get back to you ASAP!"
+      />
     </Layout>
   )
 }

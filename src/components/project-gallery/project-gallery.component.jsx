@@ -3,7 +3,7 @@ import * as S from "./project-gallery.styles"
 import PropTypes from "prop-types"
 import { getSrc } from "gatsby-plugin-image"
 import Lightbox from "react-image-lightbox"
-import { IconButton } from "@mui/material"
+import { Fade } from "react-awesome-reveal"
 
 const ProjectGallery = ({ images }) => {
   const [isOpenLightBox, setIsOpenLightbox] = useState(false)
@@ -16,14 +16,16 @@ const ProjectGallery = ({ images }) => {
   return (
     <S.Wrapper>
       {images.map(({ image }, index) => (
-        <S.GalleryImage
-          onClick={() => {
-            setIsOpenLightbox(true)
-            setPhotoIndex(index)
-          }}
-          img={image}
-          key={index}
-        />
+        <S.CustomFade triggerOnce>
+          <S.GalleryImage
+            onClick={() => {
+              setIsOpenLightbox(true)
+              setPhotoIndex(index)
+            }}
+            img={image}
+            key={index}
+          />
+        </S.CustomFade>
       ))}
       {isOpenLightBox && (
         <Lightbox

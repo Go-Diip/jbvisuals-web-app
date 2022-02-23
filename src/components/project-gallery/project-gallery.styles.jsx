@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
 `
 
 export const GalleryImage = styled(CustomImage)`
+  cursor: pointer;
   :not(:last-child) {
     margin-bottom: 2em;
   }

@@ -4,10 +4,10 @@ import { Container, Grid } from "@mui/material"
 import ProjectGallery from "../project-gallery/project-gallery.component"
 import PropTypes from "prop-types"
 import FacebookIcon from "@mui/icons-material/Facebook"
-import InstagramIcon from "@mui/icons-material/Instagram"
-import BehanceIcon from "../../assets/behance.svg"
+import LinkedInIcon from "@mui/icons-material/LinkedIn"
+import TwitterIcon from "@mui/icons-material/Twitter"
 
-const ProjectWrapper = ({ title, location, architect, images }) => {
+const ProjectWrapper = ({ title, location, architect, images, uri }) => {
   return (
     <S.Wrapper>
       <Container>
@@ -22,22 +22,22 @@ const ProjectWrapper = ({ title, location, architect, images }) => {
               {architect && <S.Architect>Architect: {architect}</S.Architect>}
               <S.IconsWrapper>
                 <a
-                  href="https://www.facebook.com/pg/JBvisualization"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=https://jbvisualsproduction.gatsbyjs.io${uri}`}
                   target="_blank"
                 >
                   <FacebookIcon />
                 </a>
                 <a
-                  href="https://www.instagram.com/juliabogdan_visuals/?hl=es"
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=https://jbvisualsproduction.gatsbyjs.io${uri}`}
                   target="_blank"
                 >
-                  <InstagramIcon />
+                  <LinkedInIcon />
                 </a>
                 <a
-                  href="https://www.behance.net/julijabogdf901"
+                  href={`https://twitter.com/intent/tweet?&url=https://jbvisualsproduction.gatsbyjs.io${uri}`}
                   target="_blank"
                 >
-                  <BehanceIcon />
+                  <TwitterIcon />
                 </a>
               </S.IconsWrapper>
             </S.SocialWrapper>

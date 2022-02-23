@@ -14,14 +14,14 @@ import { AppContainer } from "../styles/app.styles"
 import Footer from "./footer/footer.component"
 import Sidebar from "./sidebar/sidebar.component"
 
-const Layout = ({ seo, children }) => {
+const Layout = ({ seo, children, isHome }) => {
   return (
     <>
       {seo && <SEO data={seo} />}
       {/*<Header />*/}
 
       <AppContainer>
-        <Sidebar />
+        <Sidebar isHome={isHome} />
         <div className="contentWrapper">
           <main>{children}</main>
           <Footer />

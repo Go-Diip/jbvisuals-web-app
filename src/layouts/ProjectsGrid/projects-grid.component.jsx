@@ -79,7 +79,7 @@ const ProjectsGrid = () => {
     )
   }, [activeCategory])
   return (
-    <S.Wrapper id={"work-section"}>
+    <S.Wrapper id={"works-section"}>
       <Container maxWidth="xl">
         <S.CustomTabs
           centered

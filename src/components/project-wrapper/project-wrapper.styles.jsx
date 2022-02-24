@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import SectionWrapper from "../section-wrapper/section-wrapper.component"
 import { Typography } from "@mui/material"
+import { PlayCircle } from "@mui/icons-material"
+import CustomImage from "../custom-image/custom-image.component"
 
 export const Wrapper = styled(SectionWrapper)``
 
@@ -63,4 +65,40 @@ export const IconsWrapper = styled.div`
       }
     }
   }
+`
+
+export const VideoContainer = styled.div`
+  margin-top: 5em;
+  margin-bottom: -3em;
+  display: block;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+`
+
+export const AboutImage = styled(CustomImage)`
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  display: block;
+`
+
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const PlayCircleIcon = styled(PlayCircle)`
+  color: white;
+  width: 3em;
+  height: 3em;
 `

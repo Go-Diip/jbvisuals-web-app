@@ -23,6 +23,18 @@ export const query = graphql`
         architect
         location
         projectDescription
+        youtubeVideo {
+          image {
+            altText
+            sourceUrl
+            localFile {
+              childImageSharp {
+                gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+              }
+            }
+          }
+          videoId
+        }
         images {
           image {
             altText

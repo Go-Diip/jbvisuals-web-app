@@ -27,8 +27,9 @@ export const Location = styled.span`
 `
 
 export const SocialWrapper = styled.div`
-  position: fixed;
-  padding: 4em;
+  //position: fixed;
+  //padding: 4em;
+  padding: 5em 0 0 2em;
 `
 
 export const Architect = styled.span`

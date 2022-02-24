@@ -22,6 +22,7 @@ export const query = graphql`
       projectBuilder {
         architect
         location
+        projectDescription
         images {
           image {
             altText

@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import SectionWrapper from "../section-wrapper/section-wrapper.component"
+import { Typography } from "@mui/material"
 
 export const Wrapper = styled(SectionWrapper)``
 
@@ -31,6 +32,13 @@ export const SocialWrapper = styled.div`
 `
 
 export const Architect = styled.span`
+  font-size: ${({ theme }) => theme.typography.pxToRem(16)};
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  line-height: 28px;
+`
+
+export const ProjectDescription = styled(Typography)`
   font-size: ${({ theme }) => theme.typography.pxToRem(16)};
   font-weight: 300;
   letter-spacing: 0.7px;

@@ -7,8 +7,16 @@ import FacebookIcon from "@mui/icons-material/Facebook"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import TwitterIcon from "@mui/icons-material/Twitter"
 import { Fade } from "react-awesome-reveal"
+import parse from "html-react-parser"
 
-const ProjectWrapper = ({ title, location, architect, images, uri }) => {
+const ProjectWrapper = ({
+  title,
+  location,
+  architect,
+  images,
+  uri,
+  projectDescription,
+}) => {
   return (
     <S.Wrapper>
       <Container>
@@ -22,6 +30,11 @@ const ProjectWrapper = ({ title, location, architect, images, uri }) => {
             <Fade triggerOnce>
               <S.SocialWrapper>
                 {architect && <S.Architect>Architect: {architect}</S.Architect>}
+                {projectDescription && (
+                  <S.ProjectDescription>
+                    {parse(projectDescription)}
+                  </S.ProjectDescription>
+                )}
                 <S.IconsWrapper>
                   <a
                     href={`https://www.facebook.com/sharer/sharer.php?u=https://jbvisualsproduction.gatsbyjs.io${uri}`}

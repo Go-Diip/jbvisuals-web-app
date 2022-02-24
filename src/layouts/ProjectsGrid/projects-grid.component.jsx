@@ -107,7 +107,7 @@ const ProjectsGrid = () => {
                       key={id}
                       img={featuredImage?.node}
                       title={title}
-                      imageSize={index % 2 === 0 ? "large" : "small"}
+                      imageSize={index % 3 !== 0 ? "large" : "small"}
                       uri={uri}
                     />
                   </Fade>

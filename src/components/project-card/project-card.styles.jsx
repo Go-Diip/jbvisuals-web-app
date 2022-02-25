@@ -18,6 +18,8 @@ export const Title = styled(Typography)`
 export const ViewMoreLink = styled(CustomLink)`
   font-size: ${({ theme }) => theme.typography.pxToRem(14)};
   color: black;
+  text-align: right;
+  border-bottom: 1px solid black;
 `
 
 export const CardImage = styled(CustomImage)`

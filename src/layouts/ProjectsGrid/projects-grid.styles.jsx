@@ -5,6 +5,11 @@ import CustomLink from "../../components/custom-link/custom-link.component"
 
 export const CustomTabs = styled(Tabs)`
   margin-bottom: 2em;
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  } ;
 `
 
 export const CustomTab = styled(Tab)`

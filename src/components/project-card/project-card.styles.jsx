@@ -4,6 +4,8 @@ import CustomLink from "../custom-link/custom-link.component"
 import CustomImage from "../custom-image/custom-image.component"
 
 export const Wrapper = styled.div`
+  overflow: hidden;
+  margin-bottom: 0 !important;
   .gatsby-image-wrapper {
     cursor: pointer;
   }
@@ -23,16 +25,27 @@ export const ViewMoreLink = styled(CustomLink)`
 `
 
 export const CardImage = styled(CustomImage)`
-  transition: 0.5s all ease-in-out;
-  &.small {
-    height: 200px;
+  transition: 0.3s all ease-in-out;
+  overflow: hidden;
+  //&.small {
+  //  height: 200px;
+  //}
+  //
+  //&.large {
+  //  height: 500px;
+  //}
+  //filter: grayscale(1);
+  img {
+    //transition: all 0.3s ease !important;
+    filter: grayscale(1);
+    transition: opacity 0.25s linear, transform 0.3s ease, filter 3s ease !important;
   }
 
-  &.large {
-    height: 500px;
-  }
-  filter: grayscale(1);
   &:hover {
-    filter: grayscale(0);
+    //filter: none;
+    img {
+      transform: scale(1.1);
+      filter: none;
+    }
   }
 `

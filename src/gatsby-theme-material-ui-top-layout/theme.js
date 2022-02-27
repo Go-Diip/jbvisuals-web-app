@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles"
 
 const theme = createTheme({
-  navHeight: 0,
+  navHeight: 56,
   sidebarWidth: 200,
   sectionPadding: "padding-top: 1.5em; padding-bottom: 1.5em;",
   fonts: {

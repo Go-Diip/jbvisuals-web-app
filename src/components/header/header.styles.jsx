@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { IconButton } from "@mui/material"
 
 export const Wrapper = styled.nav`
-  padding: 1em 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,6 +13,10 @@ export const Wrapper = styled.nav`
   ${({ theme }) => theme.breakpoints.down("lg")} {
     display: flex;
     flex-direction: column;
+  }
+
+  ${({ theme }) => theme.breakpoints.up("lg")} {
+    padding: 1em 0;
   } ;
 `
 

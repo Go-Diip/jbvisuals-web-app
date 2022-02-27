@@ -5,12 +5,11 @@ import Masonry from "react-masonry-css"
 import ProjectCard from "../../components/project-card/project-card.component"
 import { getSrc } from "gatsby-plugin-image"
 
-import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
-import { Container } from "@mui/material"
-import parse from "html-react-parser"
+import { Container, useMediaQuery } from "@mui/material"
 import { Fade } from "react-awesome-reveal"
-import { SRLWrapper } from "simple-react-lightbox"
+import ProjectsLightbox from "../../components/projects-lightbox/projects-lightbox.component"
+import { useTheme } from "@mui/system"
 
 const ProjectsGrid = () => {
   const projectsQuery = useStaticQuery(graphql`
@@ -39,6 +38,19 @@ const ProjectsGrid = () => {
               title
             }
           }
+          projectBuilder {
+            images {
+              image {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+                  }
+                }
+                altText
+                title
+              }
+            }
+          }
           projectCategories {
             nodes {
               databaseId
@@ -58,14 +70,16 @@ const ProjectsGrid = () => {
 
   const allCategories = projectsQuery.allWpProjectCategory.nodes
   const allProjects = projectsQuery.allWpProject.nodes
+  const theme = useTheme()
+  const isMd = useMediaQuery(theme.breakpoints.up("md"), {
+    defaultMatches: true,
+  })
 
   const [activeCategory, setActiveCategory] = useState("all")
   const [projectsToShow, setProjectsToShow] = useState(allProjects)
-  const [isOpenLightBox, setIsOpenLightbox] = useState(false)
-  const [photoIndex, setPhotoIndex] = useState(0)
-  const images = projectsToShow.map(({ featuredImage }) =>
-    getSrc(featuredImage?.node?.localFile)
-  )
+  const [projectTitle, setProjectTitle] = useState("")
+
+  const [images, setImages] = useState([])
 
   useEffect(() => {
     if (activeCategory === "all") {
@@ -80,6 +94,18 @@ const ProjectsGrid = () => {
       )
     )
   }, [activeCategory])
+
+  const handleSetImages = project => {
+    if (project) {
+      setProjectTitle(project.title)
+      const featuredImg = getSrc(project?.featuredImage?.node?.localFile)
+      const galleryImgs = project?.projectBuilder?.images?.map(({ image }) =>
+        getSrc(image?.localFile)
+      )
+
+      setImages([...galleryImgs, featuredImg])
+    }
+  }
   return (
     <S.Wrapper id={"works-section"}>
       <Fade triggerOnce duration={2000}>
@@ -87,6 +113,9 @@ const ProjectsGrid = () => {
           <S.CustomTabs
             centered
             value={activeCategory}
+            variant={isMd ? "standard" : "scrollable"}
+            scrollButtons="auto"
+            // allowScrollButtonsMobile
             onChange={(e, newVal) => setActiveCategory(newVal)}
           >
             <S.CustomTab value="all" label="All" />
@@ -94,70 +123,25 @@ const ProjectsGrid = () => {
               <S.CustomTab key={databaseId} value={databaseId} label={name} />
             ))}
           </S.CustomTabs>
-          <SRLWrapper options={{ caption: { showCaption: false } }}>
-            <Masonry
-              breakpointCols={breakpointColumnsObj}
-              className="masonry-grid"
-              columnClassName="masonry-grid_column"
-            >
-              {projectsToShow.map(
-                ({ id, featuredImage, title, uri }, index) => (
-                  <Fade>
-                    <ProjectCard
-                      key={id}
-                      img={featuredImage?.node}
-                      title={title}
-                      imageSize={index % 3 !== 0 ? "large" : "small"}
-                      uri={uri}
-                    />
-                  </Fade>
-                )
-              )}
-            </Masonry>
-          </SRLWrapper>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="masonry-grid"
+            columnClassName="masonry-grid_column"
+          >
+            {projectsToShow.map((item, index) => (
+              <ProjectCard
+                handleImageClick={() => handleSetImages(item)}
+                key={item.id}
+                img={item.featuredImage?.node}
+                title={item.title}
+                // imageSize={index % 3 !== 0 ? "large" : "small"}
+                uri={item.uri}
+              />
+            ))}
+          </Masonry>
         </Container>
       </Fade>
-
-      {isOpenLightBox && (
-        <Lightbox
-          mainSrc={images[photoIndex]}
-          // imageTitle={parse('<a id="replace">text</a>', {
-          //   replace: domNode => {
-          //     if (domNode.attribs && domNode.attribs.id === "replace") {
-          //       return (
-          //         <S.LinkWrapper>
-          //           <S.SeeMoreLink url={projectsToShow[photoIndex].uri}>
-          //             {projectsToShow[photoIndex].title}
-          //           </S.SeeMoreLink>
-          //         </S.LinkWrapper>
-          //       )
-          //     }
-          //   },
-          // })}
-          nextSrc={images[(photoIndex + 1) % images.length]}
-          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-          onCloseRequest={() => setIsOpenLightbox(false)}
-          onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + images.length - 1) % images.length)
-          }
-          onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % images.length)
-          }
-          imageCaption={parse('<a id="replace">text</a>', {
-            replace: domNode => {
-              if (domNode.attribs && domNode.attribs.id === "replace") {
-                return (
-                  <S.LinkWrapper>
-                    <S.SeeMoreLink url={projectsToShow[photoIndex].uri}>
-                      {projectsToShow[photoIndex].title}
-                    </S.SeeMoreLink>
-                  </S.LinkWrapper>
-                )
-              }
-            },
-          })}
-        />
-      )}
+      <ProjectsLightbox projectTitle={projectTitle} images={images} />
     </S.Wrapper>
   )
 }

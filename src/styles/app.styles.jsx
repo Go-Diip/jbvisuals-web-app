@@ -212,13 +212,15 @@ export const LayoutTitle = styled.h2`
 export const AppContainer = styled.div`
   position: relative;
   flex: 1;
-  padding-top: ${({ theme }) => theme.navHeight}px;
   width: 100%;
+  main {
+    padding-top: ${({ theme }) => theme.navHeight}px;
+  }
   // background-color: #f8fdff;
   ${({ theme }) => theme.breakpoints.up("lg")} {
-    main {
-      padding: 0 0.5em;
-    }
+    //main {
+    //  padding: 0 0.5em;
+    //}
     .contentWrapper {
       max-width: calc(100% - ${({ theme }) => theme.sidebarWidth}px);
       margin-left: auto;

@@ -4,8 +4,9 @@ import { Box, Container } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import CustomLink from "../custom-link/custom-link.component"
+import MobileHeader from "./mobile-header/mobile-header.component"
 
-const Header = () => {
+const Header = ({ isHome }) => {
   const [isActiveMenu, setIsActiveMenu] = useState(false)
   const handleToggleMenu = () => {
     setIsActiveMenu(!isActiveMenu)
@@ -24,6 +25,11 @@ const Header = () => {
           </Box>
         </S.NavWrapper>
       </Container>
+      <MobileHeader
+        isHome={isHome}
+        isActiveMenu={isActiveMenu}
+        handleClose={() => setIsActiveMenu(false)}
+      />
     </S.Wrapper>
   )
 }

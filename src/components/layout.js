@@ -22,7 +22,7 @@ const Layout = ({ seo, children, isHome }) => {
       {/*<Header />*/}
 
       <AppContainer>
-        <Header />
+        <Header isHome={isHome} />
         <Sidebar isHome={isHome} />
         <div className="contentWrapper">
           <main>

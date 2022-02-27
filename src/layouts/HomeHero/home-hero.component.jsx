@@ -7,7 +7,6 @@ import "swiper/css"
 import "swiper/css/effect-fade"
 import "swiper/css/autoplay"
 import "swiper/css/pagination"
-import CustomBgImage from "../../components/custom-bg-image/custom-bg-image.component"
 
 const HomeHero = ({ images }) => {
   if (!images) return null
@@ -22,13 +21,13 @@ const HomeHero = ({ images }) => {
         slidesPerView={1}
         speed={600}
         autoplay={{
-          delay: 3000,
+          delay: 2000,
           disableOnInteraction: true,
         }}
       >
         {images.map((image, index) => (
           <SwiperSlide key={`home-img-${index}`}>
-            <S.BgImage img={image} tag="div" />
+            <S.BgImage img={image.image} tag="div" />
           </SwiperSlide>
         ))}
       </Swiper>

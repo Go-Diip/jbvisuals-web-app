@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import CustomLink from "../custom-link/custom-link.component"
+import { Link } from "react-scroll"
 
 export const Wrapper = styled.nav`
   padding: 2em 1em;
@@ -23,8 +24,28 @@ export const LinkItem = styled(CustomLink)`
   color: ${({ theme }) => theme.palette.main};
   display: block;
   text-align: center;
+  transition: 0.3s all ease;
+  font-weight: 400;
   :not(:first-child) {
     padding-top: 1em;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.palette.secondary.main};
+  }
+`
+
+export const ScrollItem = styled(Link)`
+  color: ${({ theme }) => theme.palette.main};
+  display: block;
+  text-align: center;
+  transition: 0.3s all ease;
+  cursor: pointer;
+  font-weight: 400;
+  :not(:first-child) {
+    padding-top: 1em;
+  }
+  &:hover {
+    color: ${({ theme }) => theme.palette.secondary.main};
   }
 `
 

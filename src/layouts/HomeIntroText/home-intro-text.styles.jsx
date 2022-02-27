@@ -2,8 +2,6 @@ import styled, { keyframes } from "styled-components"
 import SectionWrapper from "../../components/section-wrapper/section-wrapper.component"
 
 export const Wrapper = styled(SectionWrapper)`
-  padding-top: 2em;
-  padding-bottom: 2em;
   text-align: center;
   p {
     font-size: ${({ theme }) => theme.typography.pxToRem(28)};

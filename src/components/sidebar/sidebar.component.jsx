@@ -2,19 +2,28 @@ import React from "react"
 import * as S from "./sidebar.styles.jsx"
 import Typography from "@mui/material/Typography"
 import CustomLink from "../custom-link/custom-link.component"
+import { Fade } from "react-awesome-reveal"
 
-const Sidebar = () => {
+const Sidebar = ({ isHome }) => {
   return (
     <S.Wrapper>
       <S.TopWrapper>
-        <S.LinkItem>Our Work</S.LinkItem>
+        {isHome ? (
+          <S.ScrollItem to="works-section" smooth={true} duration={1000}>
+            Our Work
+          </S.ScrollItem>
+        ) : (
+          <S.LinkItem url="/#works-section">Our Work</S.LinkItem>
+        )}
         <S.LinkItem url="/about/">About</S.LinkItem>
         <S.LinkItem url="/contact/">Contact</S.LinkItem>
       </S.TopWrapper>
       <S.MiddleWrapper>
-        <CustomLink url="/">
-          <img src="logo.png" alt="Logo" />
-        </CustomLink>
+        <Fade direction="up" triggerOnce>
+          <CustomLink url="/">
+            <img src="/logo.png" alt="Logo" />
+          </CustomLink>
+        </Fade>
       </S.MiddleWrapper>
       <S.BottomWrapper>
         <Typography>

@@ -1,13 +1,19 @@
 import styled from "styled-components"
 import SectionWrapper from "../../components/section-wrapper/section-wrapper.component"
 import { Tabs, Tab } from "@mui/material"
+import CustomLink from "../../components/custom-link/custom-link.component"
 
 export const CustomTabs = styled(Tabs)`
   margin-bottom: 2em;
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  } ;
 `
 
 export const CustomTab = styled(Tab)`
-  color: black;
+  color: black !important;
   opacity: 0.4;
 
   &.Mui-selected {
@@ -16,6 +22,7 @@ export const CustomTab = styled(Tab)`
 `
 
 export const Wrapper = styled(SectionWrapper)`
+  padding: 0;
   .masonry-grid {
     display: flex;
     margin-left: -16px; /* gutter size offset */
@@ -32,4 +39,15 @@ export const Wrapper = styled(SectionWrapper)`
     // background: grey;
     margin-bottom: 16px;
   }
+`
+
+export const SeeMoreLink = styled(CustomLink)`
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px solid white !important;
+  font-size: 1rem;
+`
+
+export const LinkWrapper = styled.div`
+  padding: 1em 0;
 `

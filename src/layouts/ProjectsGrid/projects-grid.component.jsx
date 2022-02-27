@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react"
 import * as S from "./projects-grid.styles"
-import { Tab } from "@mui/material"
 import { graphql, useStaticQuery } from "gatsby"
 import Masonry from "react-masonry-css"
 import ProjectCard from "../../components/project-card/project-card.component"
 import { getSrc } from "gatsby-plugin-image"
 
-import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
+import { Container, useMediaQuery } from "@mui/material"
+import { Fade } from "react-awesome-reveal"
+import ProjectsLightbox from "../../components/projects-lightbox/projects-lightbox.component"
+import { useTheme } from "@mui/system"
 
 const ProjectsGrid = () => {
   const projectsQuery = useStaticQuery(graphql`
@@ -36,6 +38,19 @@ const ProjectsGrid = () => {
               title
             }
           }
+          projectBuilder {
+            images {
+              image {
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+                  }
+                }
+                altText
+                title
+              }
+            }
+          }
           projectCategories {
             nodes {
               databaseId
@@ -55,16 +70,16 @@ const ProjectsGrid = () => {
 
   const allCategories = projectsQuery.allWpProjectCategory.nodes
   const allProjects = projectsQuery.allWpProject.nodes
+  const theme = useTheme()
+  const isMd = useMediaQuery(theme.breakpoints.up("md"), {
+    defaultMatches: true,
+  })
 
   const [activeCategory, setActiveCategory] = useState("all")
   const [projectsToShow, setProjectsToShow] = useState(allProjects)
-  const [isOpenLightBox, setIsOpenLightbox] = useState(false)
-  const [photoIndex, setPhotoIndex] = useState(0)
-  const images = projectsToShow.map(({ featuredImage }) =>
-    getSrc(featuredImage.node.localFile)
-  )
+  const [projectTitle, setProjectTitle] = useState("")
 
-  console.log("projectsToShow", projectsToShow)
+  const [images, setImages] = useState([])
 
   useEffect(() => {
     if (activeCategory === "all") {
@@ -79,51 +94,54 @@ const ProjectsGrid = () => {
       )
     )
   }, [activeCategory])
+
+  const handleSetImages = project => {
+    if (project) {
+      setProjectTitle(project.title)
+      const featuredImg = getSrc(project?.featuredImage?.node?.localFile)
+      const galleryImgs = project?.projectBuilder?.images?.map(({ image }) =>
+        getSrc(image?.localFile)
+      )
+
+      setImages([...galleryImgs, featuredImg])
+    }
+  }
   return (
-    <S.Wrapper>
-      <S.CustomTabs
-        centered
-        value={activeCategory}
-        onChange={(e, newVal) => setActiveCategory(newVal)}
-      >
-        <S.CustomTab value="all" label="All" />
-        {allCategories.map(({ databaseId, name }) => (
-          <S.CustomTab key={databaseId} value={databaseId} label={name} />
-        ))}
-      </S.CustomTabs>
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="masonry-grid"
-        columnClassName="masonry-grid_column"
-      >
-        {projectsToShow.map(({ id, featuredImage, title, uri }, index) => (
-          <ProjectCard
-            key={id}
-            img={featuredImage?.node}
-            title={title}
-            handleImageClick={() => {
-              setIsOpenLightbox(true)
-              setPhotoIndex(index)
-            }}
-            uri={uri}
-          />
-        ))}
-      </Masonry>
-      {isOpenLightBox && (
-        <Lightbox
-          mainSrc={images[photoIndex]}
-          imageTitle={projectsToShow[photoIndex].title}
-          nextSrc={images[(photoIndex + 1) % images.length]}
-          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-          onCloseRequest={() => setIsOpenLightbox(false)}
-          onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + images.length - 1) % images.length)
-          }
-          onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % images.length)
-          }
-        />
-      )}
+    <S.Wrapper id={"works-section"}>
+      <Fade triggerOnce duration={2000}>
+        <Container maxWidth="xl">
+          <S.CustomTabs
+            centered
+            value={activeCategory}
+            variant={isMd ? "standard" : "scrollable"}
+            scrollButtons="auto"
+            // allowScrollButtonsMobile
+            onChange={(e, newVal) => setActiveCategory(newVal)}
+          >
+            <S.CustomTab value="all" label="All" />
+            {allCategories.map(({ databaseId, name }) => (
+              <S.CustomTab key={databaseId} value={databaseId} label={name} />
+            ))}
+          </S.CustomTabs>
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="masonry-grid"
+            columnClassName="masonry-grid_column"
+          >
+            {projectsToShow.map((item, index) => (
+              <ProjectCard
+                handleImageClick={() => handleSetImages(item)}
+                key={item.id}
+                img={item.featuredImage?.node}
+                title={item.title}
+                // imageSize={index % 3 !== 0 ? "large" : "small"}
+                uri={item.uri}
+              />
+            ))}
+          </Masonry>
+        </Container>
+      </Fade>
+      <ProjectsLightbox projectTitle={projectTitle} images={images} />
     </S.Wrapper>
   )
 }

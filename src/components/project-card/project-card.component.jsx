@@ -1,12 +1,12 @@
 import React from "react"
 import * as S from "./project-card.styles.jsx"
-import CustomImage from "../custom-image/custom-image.component"
 import { Box } from "@mui/material"
+import parse from "html-react-parser"
 
-const ProjectCard = ({ img, title, uri, handleImageClick }) => {
+const ProjectCard = ({ img, title, uri, imageSize, handleImageClick }) => {
   return (
-    <S.Wrapper>
-      <CustomImage onClick={handleImageClick} img={img} />
+    <S.Wrapper onClick={handleImageClick}>
+      <S.CardImage className={imageSize} img={img} />
       <Box
         sx={{
           display: "flex",

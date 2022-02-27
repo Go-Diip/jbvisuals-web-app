@@ -10,7 +10,7 @@ const Footer = ({ className }) => {
   return (
     <S.Wrapper className={className}>
       <Container>
-        <S.Logo src="logo.png" alt="logo" />
+        <S.Logo src="/logo.png" alt="logo" />
         <S.Social>
           <a href="https://www.facebook.com/pg/JBvisualization" target="_blank">
             <FacebookIcon />

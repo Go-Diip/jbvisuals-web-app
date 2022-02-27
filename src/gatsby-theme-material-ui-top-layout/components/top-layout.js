@@ -5,16 +5,25 @@ import { useMediaQuery } from "@mui/material"
 import { GlobalStyles } from "../../styles/app.styles"
 
 export default function TopLayout({ children, theme }) {
-  const isMd = useMediaQuery(theme.breakpoints.up("md"), {
+  const isLg = useMediaQuery(theme.breakpoints.up("lg"), {
     defaultMatches: true,
   })
+
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"), {
+    defaultMatches: true,
+  })
+
   let navHeight = theme.navHeight
   let sectionPadding = theme.sectionPadding
 
-  if (isMd) {
+  if (isLg) {
     navHeight = 0
     sectionPadding = "padding-top: 5em; padding-bottom: 5em;"
   }
+  // else {
+  //   navHeight = 80
+  //   sectionPadding = "padding-top: 5em; padding-bottom: 5em;"
+  // }
 
   return (
     <ThemeTopLayout theme={{ ...theme, navHeight, sectionPadding }}>

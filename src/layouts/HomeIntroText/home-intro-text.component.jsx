@@ -4,8 +4,7 @@ import parse from "html-react-parser"
 import Typewriter from "typewriter-effect"
 import Typography from "@mui/material/Typography"
 
-const HomeIntroText = ({ text }) => {
-  if (!text) return null
+const HomeIntroText = ({}) => {
   return (
     <S.Wrapper contained>
       <Typography>

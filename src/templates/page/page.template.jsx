@@ -48,10 +48,32 @@ export const query = graphql`
           ... on WpPage_Pagebuilder_Layouts_MiscContent {
             ...MiscContent
           }
+          ... on WpPage_Pagebuilder_Layouts_HomeHero {
+            ...HomeHero
+          }
+          ... on WpPage_Pagebuilder_Layouts_HomeIntroText {
+            ...HomeIntroText
+          }
+          ... on WpPage_Pagebuilder_Layouts_ProjectsGrid {
+            ...ProjectsGrid
+          }
+          ... on WpPage_Pagebuilder_Layouts_ContactRow {
+            ...ContactRow
+          }
+          ... on WpPage_Pagebuilder_Layouts_InfoRow {
+            ...InfoRow
+          }
+          ... on WpPage_Pagebuilder_Layouts_CenteredRow {
+            ...CenteredRow
+          }
+          ... on WpPage_Pagebuilder_Layouts_ContactSection {
+            ...ContactSection
+          }
         }
         pageConfiguration {
           hideFooter
           hideHeaderItems
+          isHome
         }
       }
     }

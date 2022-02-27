@@ -21,7 +21,7 @@ const HomeHero = ({ images }) => {
         slidesPerView={1}
         speed={600}
         autoplay={{
-          delay: 3000,
+          delay: 2000,
           disableOnInteraction: true,
         }}
       >

@@ -12,16 +12,16 @@ const Footer = ({ className }) => {
       <Container>
         <S.Logo src="/logo.png" alt="logo" />
         <S.Social>
-          <a href="https://www.facebook.com/pg/JBvisualization" target="_blank">
-            <FacebookIcon />
-          </a>
+          {/*<a href="https://www.facebook.com/pg/JBvisualization" target="_blank">*/}
+          {/*  <FacebookIcon />*/}
+          {/*</a>*/}
           <a
-            href="https://www.instagram.com/juliabogdan_visuals/?hl=es"
+            href="https://www.instagram.com/jbvisuals_archviz/?hl=es"
             target="_blank"
           >
             <InstagramIcon />
           </a>
-          <a href="https://www.behance.net/julijabogdf901" target="_blank">
+          <a href="https://www.behance.net/jbvisuals_archviz" target="_blank">
             <BehanceIcon />
           </a>
         </S.Social>

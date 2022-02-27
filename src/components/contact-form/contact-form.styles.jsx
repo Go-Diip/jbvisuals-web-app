@@ -3,6 +3,7 @@ import CustomButton from "../custom-button/custom-button.component"
 
 export const Wrapper = styled.div`
   padding: 3em 0;
+  position: relative;
 `
 
 export const Button = styled(CustomButton)`

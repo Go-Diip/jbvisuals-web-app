@@ -11,7 +11,7 @@ console.log(`This WordPress Endpoint is used: '${process.env.WORDPRESS_URL}'`)
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.domain.com`,
+    siteUrl: `https://www.jbvisuals.co`,
   },
   flags: {
     // FAST_DEV: true,
@@ -37,8 +37,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.domain.com",
-        sitemap: "https://www.domain.com/sitemap.xml",
+        host: "https://www.jbvisuals.co",
+        sitemap: "https://www.jbvisuals.co/sitemap.xml",
         env: {
           development: {
             policy: [
@@ -95,17 +95,17 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `gatsby-starter-default`,
-    //     short_name: `starter`,
-    //     start_url: `/`,
-    //     background_color: `transparent`,
-    //     theme_color: `#39C33A`,
-    //     // icon: `src/assets/icons/short-logo.svg` // This path is relative to the root of the site.
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `JB Visuals`,
+        short_name: `JB Visuals`,
+        start_url: `/`,
+        background_color: `transparent`,
+        theme_color: `#323232`,
+        icon: `src/assets/icons/short-logo.png`, // This path is relative to the root of the site.
+      },
+    },
     /*
      * Gatsby's data processing layer begins with “source”
      * plugins. Here the site sources its data from WordPress.

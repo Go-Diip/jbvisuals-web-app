@@ -4,11 +4,15 @@ import { Typography } from "@mui/material"
 
 export const Wrapper = styled(SectionWrapper)`
   padding-top: 0;
+  padding-bottom: 0;
+  background-color: #fafafa;
 `
 
 export const ContentWrapper = styled.div`
   padding: 8em 0;
   text-align: center;
+  max-width: 750px;
+  margin: auto;
 `
 
 export const TopDescription = styled(Typography)`

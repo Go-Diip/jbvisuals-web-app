@@ -16,21 +16,22 @@ const CustomInput = ({
   type = "text",
   halfWidth,
   multiline,
+  ...otherProps
 }) => {
-  // const getError = () => {
-  //   if (errors[name]) {
-  //     if (customError) {
-  //       return customError
-  //     }
-  //     return "This is a required field"
-  //   }
-  // }
+  const getError = () => {
+    if (errors[name]) {
+      if (customError) {
+        return customError
+      }
+      return "This is a required field"
+    }
+  }
   return (
     <Grid item xs={12} md={halfWidth ? 6 : 12}>
       <S.CustomTextField
         fullWidth
         multiline={!!rows || !!rowsMax}
-        // error={!!errors[name]}
+        error={!!errors[name]}
         variant="standard"
         rows={rows}
         rowsMax={rowsMax}
@@ -45,7 +46,10 @@ const CustomInput = ({
         }}
         // variant="outlined"
         color="primary"
+        helperText={getError()}
         type={type}
+        {...otherProps}
+        {...register(name, { required: isRequired })}
       />
     </Grid>
   )

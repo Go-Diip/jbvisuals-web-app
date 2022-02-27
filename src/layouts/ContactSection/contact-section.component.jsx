@@ -1,14 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
 import * as S from "./contact-section.styles"
-import { Container, Grid } from "@mui/material"
+import { Container, Grid, Typography } from "@mui/material"
 import ContactForm from "../../components/contact-form/contact-form.component"
 import { Fade } from "react-awesome-reveal"
 
 const ContactSection = ({ topDescription, bottomDescription }) => {
+  const [successMessage, setSuccessMessage] = useState("")
   return (
     <S.Wrapper>
       <Container maxWidth="xl">
-        <Fade direction={"down"} triggerOnce>
+        <Fade triggerOnce>
           <S.ContentWrapper>
             {topDescription && (
               <S.TopDescription>{topDescription}</S.TopDescription>
@@ -19,7 +20,7 @@ const ContactSection = ({ topDescription, bottomDescription }) => {
             )}
           </S.ContentWrapper>
         </Fade>
-        <Fade direction={"up"} triggerOnce>
+        <Fade triggerOnce>
           <Grid container>
             <Grid item xs={12} md={6}>
               <S.GridWrapper className="lightGray">
@@ -42,11 +43,26 @@ const ContactSection = ({ topDescription, bottomDescription }) => {
             </Grid>
             <Grid item xs={12} md={6}>
               <S.GridWrapper className="darkGray">
-                <S.RightWrapper>
-                  <S.Title>Drop Us a Line</S.Title>
-                  <S.Line />
-                  <ContactForm />
-                </S.RightWrapper>
+                {successMessage ? (
+                  <Typography
+                    sx={{
+                      display: "flex",
+                      height: "100%",
+                      fontSize: "1.5rem",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {successMessage}
+                  </Typography>
+                ) : (
+                  <S.RightWrapper>
+                    <S.Title>Drop Us a Line</S.Title>
+                    <S.Line />
+                    <ContactForm setSuccessMessage={setSuccessMessage} />
+                  </S.RightWrapper>
+                )}
               </S.GridWrapper>
             </Grid>
           </Grid>

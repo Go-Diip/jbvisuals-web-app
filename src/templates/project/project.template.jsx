@@ -94,7 +94,7 @@ const Project = ({ data }) => {
         {...projectBuilder}
         images={[
           featuredImage?.node,
-          ...projectBuilder.images.map(({ image }) => image),
+          ...projectBuilder?.images?.map(({ image }) => image),
         ]}
         uri={uri}
       />

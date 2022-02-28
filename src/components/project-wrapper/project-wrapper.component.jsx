@@ -24,11 +24,14 @@ const ProjectWrapper = ({
 }) => {
   const [isVideoOpen, setVideoOpen] = useState(false)
   const [lightBoxImages, setLightboxImages] = useState([])
+
   const handleSetLightboxImages = () => {
     if (images) {
       setLightboxImages(images.map(image => getSrc(image.localFile)))
     }
   }
+
+  if (!images) return null
   return (
     <S.Wrapper>
       <Container>
@@ -49,8 +52,9 @@ const ProjectWrapper = ({
               </S.VideoContainer>
             )}
 
-            {images.map(image => (
+            {images.map((image, index) => (
               <CustomImage
+                key={`individual-project-img-${index}`}
                 style={{ margin: "1em 0" }}
                 img={image}
                 onClick={handleSetLightboxImages}

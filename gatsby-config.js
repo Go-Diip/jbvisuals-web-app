@@ -22,7 +22,12 @@ module.exports = {
   },
   plugins: [
     // `gatsby-plugin-preact`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        exclude: [`/404`, `/layouts`],
+      },
+    },
     `gatsby-plugin-gatsby-cloud`,
     // Make sure this plugin is first in the array of plugins
     // {

@@ -57,7 +57,6 @@ const ProjectWrapper = ({
               />
             ))}
 
-            {/*<ProjectGallery images={images} />*/}
             <ProjectsLightbox images={lightBoxImages} projectTitle={title} />
           </Grid>
           <Grid item xs={12} md={4}>
@@ -71,19 +70,19 @@ const ProjectWrapper = ({
                 )}
                 <S.IconsWrapper>
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=https://jbvisualsproduction.gatsbyjs.io${uri}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=https://jbvisuals.co${uri}`}
                     target="_blank"
                   >
                     <FacebookIcon />
                   </a>
                   <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=https://jbvisualsproduction.gatsbyjs.io${uri}`}
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=https://jbvisuals.co${uri}`}
                     target="_blank"
                   >
                     <LinkedInIcon />
                   </a>
                   <a
-                    href={`https://twitter.com/intent/tweet?&url=https://jbvisualsproduction.gatsbyjs.io${uri}`}
+                    href={`https://twitter.com/intent/tweet?&url=https://jbvisuals.co${uri}`}
                     target="_blank"
                   >
                     <TwitterIcon />

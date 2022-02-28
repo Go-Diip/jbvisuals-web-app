@@ -213,6 +213,7 @@ export const AppContainer = styled.div`
   position: relative;
   flex: 1;
   width: 100%;
+  min-height: 100vh;
   main {
     padding-top: ${({ theme }) => theme.navHeight}px;
   }

@@ -103,7 +103,7 @@ const ProjectsGrid = () => {
         getSrc(image?.localFile)
       )
 
-      setImages([...galleryImgs, featuredImg])
+      setImages([featuredImg, ...galleryImgs])
     }
   }
   return (

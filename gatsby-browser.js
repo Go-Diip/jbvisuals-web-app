@@ -10,6 +10,6 @@ import Provider from "./src/provider"
 export const wrapRootElement = Provider
 
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/#onRouteUpdate
-export const onRouteUpdate = ({ location, prevLocation }) => {
-  window.scrollTo(0, 0)
-}
+// export const onRouteUpdate = ({ location, prevLocation }) => {
+//   window.scrollTo(0, 0)
+// }

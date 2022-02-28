@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react"
 
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
+import FacebookIcon from "@mui/icons-material/Facebook"
+import TwitterIcon from "@mui/icons-material/Twitter"
+import PinterestIcon from "@mui/icons-material/Pinterest"
+import EmailIcon from "@mui/icons-material/Email"
 
 const ProjectsLightbox = ({ images, projectTitle }) => {
   const [photoIndex, setPhotoIndex] = useState([0])
@@ -18,6 +22,24 @@ const ProjectsLightbox = ({ images, projectTitle }) => {
     <>
       {isOpen && (
         <Lightbox
+          // toolbarButtons={[
+          //   <FacebookShareButton
+          //     url={window.location.href}
+          //     children={<FacebookIcon />}
+          //   />,
+          //   <TwitterShareButton
+          //     url={window.location.href}
+          //     children={<TwitterIcon />}
+          //   />,
+          //   <PinterestShareButton
+          //     url={window.location.href}
+          //     children={<PinterestIcon />}
+          //   />,
+          //   <EmailShareButton
+          //     url={window.location.href}
+          //     children={<EmailIcon />}
+          //   />,
+          // ]}
           mainSrc={images[photoIndex]}
           nextSrc={images[(photoIndex + 1) % images.length]}
           prevSrc={images[(photoIndex + images.length - 1) % images.length]}

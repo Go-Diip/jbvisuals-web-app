@@ -6,8 +6,6 @@
   "author": "Shellshock <weareshellshock.com>",
   "dependencies": {
     "@emotion/react": "^11.4.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.16",
     "@loadable/component": "^5.15.0",
     "@mui/icons-material": "^5.0.1",
     "@mui/lab": "^5.0.0-alpha.49",
@@ -57,8 +55,6 @@
     "react-modal-video": "^1.2.8",
     "react-scroll": "^1.8.5",
     "react-scroll-parallax": "^3.0.3",
-    "react-slick": "^0.28.0",
-    "simple-react-lightbox": "^3.6.9-0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.1",
     "swiper": "^7.2.0",

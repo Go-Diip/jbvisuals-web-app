@@ -86,10 +86,18 @@ export const query = graphql`
 const Project = ({ data }) => {
   const { seo, title, content, featuredImage, date, projectBuilder, uri, id } =
     data.wpProject
+
   return (
     <Layout seo={seo}>
-      <ProjectWrapper title={title} {...projectBuilder} uri={uri} />
-      {/*<Img fluid={featuredImage.imageFile.childImageSharp.fluid} />*/}
+      <ProjectWrapper
+        title={title}
+        {...projectBuilder}
+        images={[
+          featuredImage?.node,
+          ...projectBuilder.images.map(({ image }) => image),
+        ]}
+        uri={uri}
+      />
     </Layout>
   )
 }

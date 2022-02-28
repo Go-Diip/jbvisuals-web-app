@@ -27,6 +27,15 @@ const Footer = ({ className }) => {
         </S.Social>
         <S.Copyright>
           ©{new Date().getFullYear()} All Rights Reserved
+          <br />
+          Powered by{" "}
+          <a
+            target="_blank"
+            style={{ color: "inherit" }}
+            href="https://godiip.com/?utm_source=jb+visuals&utm_medium=link+on+bottom+of+website&utm_campaign=jb+visuals+powered+by+link"
+          >
+            Diip
+          </a>
         </S.Copyright>
       </Container>
     </S.Wrapper>

@@ -19,11 +19,9 @@ const Sidebar = ({ isHome }) => {
         <S.LinkItem url="/contact/">Contact</S.LinkItem>
       </S.TopWrapper>
       <S.MiddleWrapper>
-        <Fade direction="up" triggerOnce>
-          <CustomLink url="/">
-            <img src="/logo.png" alt="Logo" />
-          </CustomLink>
-        </Fade>
+        <CustomLink url="/">
+          <img src="/logo.png" alt="Logo" />
+        </CustomLink>
       </S.MiddleWrapper>
       <S.BottomWrapper>
         <Typography>

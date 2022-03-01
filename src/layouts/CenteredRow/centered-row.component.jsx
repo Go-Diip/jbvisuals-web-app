@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal"
 const CenteredRow = ({ content }) => {
   return (
     <S.Wrapper>
-      <Fade direction={"down"} duration={1000} triggerOnce>
+      <Fade riggerOnce>
         <Container maxWidth="md">
           {content && <S.Content>{parse(content)}</S.Content>}
         </Container>

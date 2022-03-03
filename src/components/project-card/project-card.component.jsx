@@ -4,8 +4,8 @@ import { Box } from "@mui/material"
 
 const ProjectCard = ({ img, title, uri, imageSize, handleImageClick }) => {
   return (
-    <S.Wrapper onClick={handleImageClick}>
-      <S.CardImage className={imageSize} img={img} />
+    <S.Wrapper>
+      <S.CardImage onClick={handleImageClick} className={imageSize} img={img} />
       <Box
         sx={{
           display: "flex",
@@ -13,7 +13,7 @@ const ProjectCard = ({ img, title, uri, imageSize, handleImageClick }) => {
           justifyContent: "space-between",
         }}
       >
-        <S.Title>{title}</S.Title>
+        <S.Title onClick={handleImageClick}>{title}</S.Title>
         <S.ViewMoreLink url={uri}>See more</S.ViewMoreLink>
       </Box>
     </S.Wrapper>

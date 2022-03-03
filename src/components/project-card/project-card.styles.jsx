@@ -15,6 +15,7 @@ export const Title = styled(Typography)`
   font-size: ${({ theme }) => theme.typography.pxToRem(16)};
   color: black;
   padding: 0.5em 0;
+  cursor: pointer;
 `
 
 export const ViewMoreLink = styled(CustomLink)`

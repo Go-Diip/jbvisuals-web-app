@@ -15,7 +15,7 @@ export const ItemsWrapper = styled(Box)`
   z-index: 9999;
   width: 100%;
   position: fixed;
-  top: 70px;
+  top: 55px;
   left: 0;
   right: 0;
   bottom: 0;

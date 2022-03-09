@@ -5,6 +5,7 @@ import CustomInput from "../custom-input/custom-input.component"
 import { useForm } from "react-hook-form"
 import { contactFormApi } from "../../apis/apis"
 import Spinner from "../spinner/spinner.component"
+import { isBrowser } from "../../utils"
 
 const ContactForm = ({ setSuccessMessage }) => {
   const [isLoading, setIsLoading] = useState(false)
@@ -37,6 +38,13 @@ const ContactForm = ({ setSuccessMessage }) => {
         setIsLoading(false)
         if (response.data) {
           if (response.data.status === "mail_sent") {
+            if (isBrowser() && window.gtag) {
+              window.gtag("event", "form_submit", {
+                event_category: "Forms",
+                event_action: "Submit",
+                event_label: "Contact",
+              })
+            }
             setSuccessMessage(response.data.message)
           } else {
             setErrorMessage(response.data.message)

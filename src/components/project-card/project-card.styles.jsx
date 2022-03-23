@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
 
 export const VRBadge = styled.span`
   content: "";
+  cursor: pointer;
   border-radius: 12px;
   position: absolute;
   top: 1rem;

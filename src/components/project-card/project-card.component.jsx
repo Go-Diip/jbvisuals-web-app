@@ -1,6 +1,7 @@
 import React from "react"
 import * as S from "./project-card.styles.jsx"
 import { Box } from "@mui/material"
+import { navigate } from "gatsby-link"
 
 const ProjectCard = ({
   img,
@@ -12,7 +13,7 @@ const ProjectCard = ({
 }) => {
   return (
     <S.Wrapper>
-      {vrIframe && <S.VRBadge>VR</S.VRBadge>}
+      {vrIframe && <S.VRBadge onClick={() => navigate(uri)}>VR</S.VRBadge>}
       <S.CardImage onClick={handleImageClick} className={imageSize} img={img} />
       <Box
         sx={{

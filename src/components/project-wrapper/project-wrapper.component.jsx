@@ -51,13 +51,14 @@ const ProjectWrapper = ({
           )}
           {vrIframe && <S.VrIframeWrapper>{parse(vrIframe)}</S.VrIframeWrapper>}
 
-          {images.map((image, index) => (
-            <S.ProjectImage
-              key={`individual-project-img-${index}`}
-              img={image}
-              onClick={() => handleImgClick(index)}
-            />
-          ))}
+          {!vrIframe &&
+            images.map((image, index) => (
+              <S.ProjectImage
+                key={`individual-project-img-${index}`}
+                img={image}
+                onClick={() => handleImgClick(index)}
+              />
+            ))}
         </Grid>
         <Grid item xs={12} md={4}>
           <S.SocialWrapper>

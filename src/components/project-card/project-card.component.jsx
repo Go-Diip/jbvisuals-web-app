@@ -2,7 +2,6 @@ import React from "react"
 import * as S from "./project-card.styles.jsx"
 import { Box } from "@mui/material"
 import { navigate } from "gatsby-link"
-import { VRBadge } from "./project-card.styles.jsx"
 
 const ProjectCard = ({
   img,

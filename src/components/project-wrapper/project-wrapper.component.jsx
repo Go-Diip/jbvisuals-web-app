@@ -21,6 +21,7 @@ const ProjectWrapper = ({
   uri,
   youtubeVideo,
   projectDescription,
+  vrIframe,
 }) => {
   const [isVideoOpen, setVideoOpen] = useState(false)
   const [photoIndex, setPhotoIndex] = useState(0)
@@ -48,11 +49,11 @@ const ProjectWrapper = ({
               </S.Overlay>
             </S.VideoContainer>
           )}
+          {vrIframe && <S.VrIframeWrapper>{parse(vrIframe)}</S.VrIframeWrapper>}
 
           {images.map((image, index) => (
-            <CustomImage
+            <S.ProjectImage
               key={`individual-project-img-${index}`}
-              style={{ margin: "1em 0", cursor: "pointer" }}
               img={image}
               onClick={() => handleImgClick(index)}
             />

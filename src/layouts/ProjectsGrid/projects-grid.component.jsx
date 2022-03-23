@@ -50,6 +50,7 @@ const ProjectsGrid = () => {
                 title
               }
             }
+            vrIframe
           }
           projectCategories {
             nodes {
@@ -111,7 +112,7 @@ const ProjectsGrid = () => {
     }
   }
   return (
-    <S.Wrapper id={"works-section"}>
+    <S.Wrapper id="works-section">
       <Fade triggerOnce duration={2000}>
         <Container maxWidth="xl">
           <S.CustomTabs
@@ -138,6 +139,7 @@ const ProjectsGrid = () => {
                 key={item.id}
                 img={item.featuredImage?.node}
                 title={item.title}
+                vrIframe={item.projectBuilder?.vrIframe}
                 // imageSize={index % 3 !== 0 ? "large" : "small"}
                 uri={item.uri}
               />

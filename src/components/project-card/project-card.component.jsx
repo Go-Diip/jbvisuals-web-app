@@ -2,9 +2,17 @@ import React from "react"
 import * as S from "./project-card.styles.jsx"
 import { Box } from "@mui/material"
 
-const ProjectCard = ({ img, title, uri, imageSize, handleImageClick }) => {
+const ProjectCard = ({
+  img,
+  title,
+  uri,
+  imageSize,
+  handleImageClick,
+  vrIframe,
+}) => {
   return (
     <S.Wrapper>
+      {vrIframe && <S.VRBadge>VR</S.VRBadge>}
       <S.CardImage onClick={handleImageClick} className={imageSize} img={img} />
       <Box
         sx={{

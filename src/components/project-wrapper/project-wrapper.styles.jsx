@@ -102,3 +102,22 @@ export const PlayCircleIcon = styled(PlayCircle)`
   width: 3em;
   height: 3em;
 `
+
+export const VrIframeWrapper = styled.div`
+  p {
+    margin: 0;
+  }
+  iframe {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 1rem;
+    ${({ theme }) => theme.breakpoints.up("md")} {
+      height: 450px;
+    }
+  }
+`
+
+export const ProjectImage = styled(CustomImage)`
+  margin-bottom: 1rem;
+  cursor: pointer;
+`

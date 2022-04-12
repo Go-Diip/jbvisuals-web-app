@@ -5,7 +5,6 @@ import Masonry from "react-masonry-css"
 import ProjectCard from "../../components/project-card/project-card.component"
 import { getSrc } from "gatsby-plugin-image"
 
-import "react-image-lightbox/style.css"
 import { Container, useMediaQuery } from "@mui/material"
 import { Fade } from "react-awesome-reveal"
 import ProjectsLightbox from "../../components/projects-lightbox/projects-lightbox.component"

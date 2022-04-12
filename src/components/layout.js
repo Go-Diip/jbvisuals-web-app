@@ -13,6 +13,7 @@ import Header from "../components/header/header.component"
 import { AppContainer } from "../styles/app.styles"
 import Footer from "./footer/footer.component"
 import Sidebar from "./sidebar/sidebar.component"
+import "react-image-lightbox/style.css"
 
 const Layout = ({ seo, children, isHome }) => {
   return (

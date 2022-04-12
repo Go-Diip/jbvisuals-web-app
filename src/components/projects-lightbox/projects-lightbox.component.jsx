@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 
 import Lightbox from "react-image-lightbox"
-import "react-image-lightbox/style.css"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import TwitterIcon from "@mui/icons-material/Twitter"
 import PinterestIcon from "@mui/icons-material/Pinterest"

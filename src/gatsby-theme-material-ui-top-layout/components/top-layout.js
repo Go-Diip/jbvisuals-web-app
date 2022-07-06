@@ -3,6 +3,7 @@ import ThemeTopLayout from "gatsby-theme-material-ui-top-layout/src/components/t
 
 import { useMediaQuery } from "@mui/material"
 import { GlobalStyles } from "../../styles/app.styles"
+import "react-image-lightbox/style.css"
 
 export default function TopLayout({ children, theme }) {
   const isLg = useMediaQuery(theme.breakpoints.up("lg"), {

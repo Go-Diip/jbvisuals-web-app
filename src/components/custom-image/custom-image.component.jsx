@@ -9,6 +9,7 @@ const CustomImage = ({
   className,
   placeholderStyle,
   arPaddingPercentage,
+  onClick,
   withFallback = false,
   ...props
 }) => {
@@ -31,7 +32,11 @@ const CustomImage = ({
 
   if (image) {
     return (
-      <S.Wrapper paddingpercentage={arPaddingPercentage} className={className}>
+      <S.Wrapper
+        onClick={onClick}
+        paddingpercentage={arPaddingPercentage}
+        className={className}
+      >
         <GatsbyImage image={image} alt={imgAlt} {...props} />
       </S.Wrapper>
     )

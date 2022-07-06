@@ -28,6 +28,7 @@ module.exports = {
         exclude: [`/404`, `/layouts`],
       },
     },
+    `gatsby-plugin-preact`,
     `gatsby-plugin-gatsby-cloud`,
     // Make sure this plugin is first in the array of plugins
     // {

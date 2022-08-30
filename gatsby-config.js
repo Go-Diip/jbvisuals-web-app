@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.jbvisuals.co",
-        sitemap: "https://www.jbvisuals.co/sitemap.xml",
+        host: "https://jbvisuals.co",
+        sitemap: "https://jbvisuals.co/sitemap.xml",
         env: {
           development: {
             policy: [

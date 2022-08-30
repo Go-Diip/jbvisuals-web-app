@@ -12,7 +12,9 @@ const HomeHero = ({ images }) => {
   if (!images) return null
   return (
     <S.Wrapper>
-      <h1 className="visuallyhidden">Jbvisuals</h1>
+      <h1 className="visuallyhidden">
+        Jbvisuals - 3D Architectural visualization
+      </h1>
       <Swiper
         modules={[Autoplay, EffectFade, Pagination]}
         effect="fade"

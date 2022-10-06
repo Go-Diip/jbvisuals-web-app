@@ -9,10 +9,14 @@ export const Wrapper = styled(SectionWrapper)`
 `
 
 export const ContentWrapper = styled.div`
-  padding: 8em 0;
+  padding: 4rem 0;
   text-align: center;
   max-width: 750px;
   margin: auto;
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    padding: 8rem 0;
+  } ;
 `
 
 export const TopDescription = styled(Typography)`
@@ -58,7 +62,7 @@ export const Line = styled.span`
 `
 
 export const GridWrapper = styled.div`
-  padding: 4em;
+  padding: 2rem;
   height: 100%;
   &.lightGray {
     background-color: #fafafa;
@@ -67,6 +71,10 @@ export const GridWrapper = styled.div`
   &.darkGray {
     background-color: #eeeeee;
   }
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    padding: 4rem;
+  } ;
 `
 
 export const Title = styled.h2`

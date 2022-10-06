@@ -20,7 +20,7 @@ const HomeHero = ({ images }) => {
         effect="fade"
         fadeEffect={{ crossFade: true }}
         // spaceBetween={50}
-        pagination={{ clickable: true }}
+        // pagination={{ clickable: true }}
         slidesPerView={1}
         speed={600}
         autoplay={{

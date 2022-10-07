@@ -35,7 +35,7 @@ const ContactSection = ({ topDescription, bottomDescription }) => {
                   <S.InfoLink href="tel:+593969097789">
                     <i>+593 96-909-7789</i>
                   </S.InfoLink>
-                  <S.InfoTitle>Suiza</S.InfoTitle>
+                  <S.InfoTitle>Switzerland</S.InfoTitle>
                   <S.InfoLink href="tel:+41765838361">
                     <i>+41 76 583 83 61</i>
                   </S.InfoLink>

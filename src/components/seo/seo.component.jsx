@@ -37,7 +37,7 @@ function SEO({ data, meta }) {
   const schemaOrgJSONLD = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    url: "https://jbvisuals.co",
+    url: "https://www.jbvisuals.co",
     name: title,
     description: opengraphDescription,
   }
@@ -62,12 +62,12 @@ function SEO({ data, meta }) {
       )}
 
       {canonical && (
-        <link rel="canonical" href={`https://jbvisuals.co${canonical}`} />
+        <link rel="canonical" href={`https://www.jbvisuals.co${canonical}`} />
       )}
 
       {/* OpenGraph tags */}
 
-      {opengraphUrl && <meta property="og:url" content={opengraphUrl} />}
+      {opengraphUrl && <meta property="og:url" content={`https://www.jbvisuals.co${opengraphUrl}`} />}
 
       {opengraphTitle && <meta property="og:title" content={opengraphTitle} />}
 

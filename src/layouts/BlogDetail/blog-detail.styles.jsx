@@ -55,6 +55,10 @@ export const Content = styled.div`
     max-width: 100%;
     width: 100%;
   }
+
+  h1 {
+    line-height: normal;
+  }
 `
 
 export const SocialWrapper = styled.div`

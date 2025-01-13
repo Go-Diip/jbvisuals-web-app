@@ -8,7 +8,7 @@ import { orderPostsByDate } from "../../utils"
 const BlogsGrid = () => {
   const staticQuery = useStaticQuery(graphql`
     query {
-      allWpPost(sort: { date: DESC }) {
+      allWpPost {
         nodes {
           title
           date(formatString: "MM.DD.YYYY")

@@ -21,7 +21,6 @@ const ContactForm = ({ setSuccessMessage }) => {
   })
 
   const onSubmit = async data => {
-    console.log("data", data)
     setErrorMessage("")
     setIsLoading(true)
 

@@ -2,6 +2,7 @@ import queryString from "query-string"
 import Cookies from "js-cookie"
 import { gravityFormsApi, HUBSPOT_API, IPIFY_API } from "./apis/apis"
 import CryptoJS from "crypto-js"
+import dayjs from "dayjs"
 
 export const isBrowser = () => typeof window !== "undefined"
 
@@ -163,4 +164,67 @@ export const submitGravityForm = (data, formId) => {
     .then(response => {
       return response
     })
+}
+
+export const capitalizeFirstLetter = string => {
+  if (!string) return
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
+
+export const orderPostsByDate = (products, invert) => {
+  const orderedProducts = products.sort((a, b) => {
+    const aUnixDate = +dayjs(a.date, "DD.MM.YYYY")
+    const bUnixDate = +dayjs(b.date, "DD.MM.YYYY")
+    return invert ? bUnixDate - aUnixDate : aUnixDate - bUnixDate
+  })
+
+  return orderedProducts
+}
+
+export const getRHFErrorMessage = (errors, name, rules) => {
+  const splitName = `${name}`.split(".")
+
+  let nameLabel = name
+  const getError = () => {
+    if (splitName.length === 2) {
+      nameLabel = splitName[1]
+      return errors[splitName[0]]?.[splitName[1]]
+    }
+    if (splitName.length === 3) {
+      nameLabel = splitName[2]
+      return errors[splitName[0]]?.[splitName[1]]?.[splitName[2]]
+    }
+    return errors[name]
+  }
+  const error = getError()
+
+  nameLabel = capitalizeFirstLetter(nameLabel)
+
+  if (error) {
+    // console.log(name, error);
+    if (error?.message) {
+      return error.message
+    }
+    switch (error.type) {
+      case "valueAsNumber":
+        return `${nameLabel} is not a valid number`
+      case "required":
+        return "This is a required field"
+      case "min":
+        return `Min ${rules?.min}`
+      case "max":
+        return `Max ${rules?.max}`
+      case "maxLength":
+        return `Max ${rules?.maxLength} characters`
+      case "minLength":
+        return `Min ${rules?.minLength} characters`
+      case "pattern":
+        return `${nameLabel} is not valid`
+      case "validate":
+        //console.log(errors)
+        return error.message
+      default:
+        return ""
+    }
+  }
 }

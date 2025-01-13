@@ -5,13 +5,13 @@ import PropTypes from "prop-types"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import TwitterIcon from "@mui/icons-material/Twitter"
-import parse from "html-react-parser"
 import LoadableModalVideo from "../../components/loadable-modal-video/loadable-modal-video"
 import "react-modal-video/css/modal-video.min.css"
 import ProjectsLightbox from "../projects-lightbox/projects-lightbox.component"
 import CustomImage from "../custom-image/custom-image.component"
 import { getSrc } from "gatsby-plugin-image"
 import Lightbox from "react-image-lightbox"
+import parse from "html-react-parser"
 
 const ProjectWrapper = ({
   title,

@@ -1,23 +1,60 @@
 import React from "react"
 import Layout from "../../components/layout"
 import { graphql } from "gatsby"
+import SEO from "../../components/seo/seo.component"
+import BlogDetail from "../../layouts/BlogDetail/blog-detail.component"
 
 export const query = graphql`
   query PostQuery($id: String!) {
     wpPost(id: { eq: $id }) {
       title
-      date
+      date(formatString: "MM.DD.YYYY")
       content
-      featuredImage {
+      author {
         node {
-          sourceUrl
-          localFile {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+          firstName
+          lastName
+          image {
+            image {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
           }
         }
       }
+      featuredImage {
+        node {
+          altText
+          title
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+      #      postFields {
+      #        author {
+      #          ... on WpTeamMember {
+      #            title
+      #            featuredImage {
+      #              node {
+      #                altText
+      #                title
+      #                localFile {
+      #                  childImageSharp {
+      #                    gatsbyImageData
+      #                  }
+      #                }
+      #              }
+      #            }
+      #          }
+      #        }
+      #      }
+      slug
       seo {
         canonical
         title
@@ -54,13 +91,18 @@ export const query = graphql`
   }
 `
 
+export const Head = ({ data }) => {
+  const seo = data.wpPost.seo
+  const canonical = `/blog${seo.canonical}`
+  const opengraphUrl = `/blog${seo.opengraphUrl}`
+  return <SEO data={{ ...seo, canonical, opengraphUrl }} />
+}
+
 const Post = ({ data }) => {
-  const { seo, title, content, featuredImage, date } = data.wpPost
+  // const { title, content, featuredImage, date } = data.wpPost
   return (
-    <Layout seo={seo}>
-      {title}
-      <div dangerouslySetInnerHTML={{ __html: content }} />
-      {/*<Img fluid={featuredImage.imageFile.childImageSharp.fluid} />*/}
+    <Layout>
+      <BlogDetail {...data.wpPost} />
     </Layout>
   )
 }

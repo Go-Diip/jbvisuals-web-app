@@ -69,6 +69,12 @@ export const query = graphql`
           ... on WpPage_Pagebuilder_Layouts_ContactSection {
             ...ContactSection
           }
+          ... on WpPage_Pagebuilder_Layouts_BlogHero {
+            ...BlogHero
+          }
+          ... on WpPage_Pagebuilder_Layouts_BlogsGrid {
+            ...BlogsGrid
+          }
         }
         pageConfiguration {
           hideFooter

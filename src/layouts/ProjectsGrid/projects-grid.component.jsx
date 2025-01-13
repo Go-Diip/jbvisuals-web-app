@@ -30,7 +30,7 @@ const ProjectsGrid = () => {
             node {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+                  gatsbyImageData
                 }
               }
               altText
@@ -42,7 +42,7 @@ const ProjectsGrid = () => {
               image {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+                    gatsbyImageData
                   }
                 }
                 altText

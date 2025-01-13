@@ -85,7 +85,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
@@ -120,10 +119,6 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        /*
-         * The full URL of the WordPress site's GraphQL API.
-         * Example : 'https://www.example-site.com/graphql'
-         */
         url: `${process.env.WORDPRESS_URL}/graphql`,
       },
     },

@@ -26,7 +26,6 @@ const Layouts = () => {
       }
     }
   `)
-  console.log("image", staticQuery.placeholder)
   return (
     <Layout
       seo={{

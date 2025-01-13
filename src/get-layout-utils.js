@@ -7,6 +7,8 @@ import ContactRow from "./layouts/ContactRow"
 import InfoRow from "./layouts/InfoRow"
 import CenteredRow from "./layouts/CenteredRow"
 import ContactSection from "./layouts/ContactSection"
+import BlogsGrid from "./layouts/BlogsGrid"
+import BlogHero from "./layouts/BlogHero"
 
 export const getPageLayout = layout => {
   const layoutName = layout?.fieldGroupName?.split("_").pop().trim()
@@ -28,5 +30,9 @@ export const getPageLayout = layout => {
       return <CenteredRow {...layout} />
     case "ContactSection":
       return <ContactSection {...layout} />
+    case "BlogsGrid":
+      return <BlogsGrid {...layout} />
+    case "BlogHero":
+      return <BlogHero {...layout} />
   }
 }

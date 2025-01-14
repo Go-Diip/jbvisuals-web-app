@@ -25,6 +25,9 @@ const MobileHeader = ({ isHome, isActiveMenu, handleClose }) => {
           <S.LinkItem onClick={handleClose} url="/about/">
             About
           </S.LinkItem>
+          <S.LinkItem onClick={handleClose} url="/blog/">
+            Blog
+          </S.LinkItem>
           <S.LinkItem onClick={handleClose} url="/contact/">
             Contact
           </S.LinkItem>

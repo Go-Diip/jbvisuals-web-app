@@ -27,10 +27,10 @@ const ContactSection = ({ topDescription, bottomDescription }) => {
                 <S.Title>Contact Info</S.Title>
                 <S.Line className="left" />
                 <S.InfoWrapper>
-                  <S.InfoTitle>WhatsApp</S.InfoTitle>
-                  <S.InfoLink href="https://wa.me/79180832718">
-                    <i>+7 918 083-27-18</i>
-                  </S.InfoLink>
+                  {/*<S.InfoTitle>WhatsApp</S.InfoTitle>*/}
+                  {/*<S.InfoLink href="https://wa.me/79180832718">*/}
+                  {/*  <i>+7 918 083-27-18</i>*/}
+                  {/*</S.InfoLink>*/}
                   <S.InfoTitle>Ecuador</S.InfoTitle>
                   <S.InfoLink href="tel:+593969097789">
                     <i>+593 96-909-7789</i>

@@ -16,7 +16,7 @@ const Footer = ({ className }) => {
           {/*  <FacebookIcon />*/}
           {/*</a>*/}
           <a
-            href="https://www.instagram.com/jbvisuals_archviz/?hl=es"
+            href="https://www.instagram.com/jbvisuals_archviz/"
             target="_blank"
           >
             <InstagramIcon />

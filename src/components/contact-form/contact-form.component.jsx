@@ -45,6 +45,9 @@ const ContactForm = ({ setSuccessMessage }) => {
                 event_action: "Submit",
                 event_label: "Contact",
               })
+              window.gtag("event", "conversion_event_submit_lead_form", {
+                // <event_parameters>
+              })
             }
             setSuccessMessage(response.data.message)
           } else {

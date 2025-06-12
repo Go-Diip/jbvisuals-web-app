@@ -208,6 +208,10 @@ export const GlobalStyles = createGlobalStyle`
     border: 0;
   }
   
+  .ReactModal__Overlay {
+    z-index: 99999 !important;
+  }
+  
   ${wordpress}
   ${snipcart}
 `
@@ -226,16 +230,7 @@ export const AppContainer = styled.div`
   width: 100%;
   min-height: 100vh;
   main {
-    padding-top: ${({ theme }) => theme.navHeight}px;
+    padding-top: 60px;
   }
   // background-color: #f8fdff;
-  ${({ theme }) => theme.breakpoints.up("lg")} {
-    //main {
-    //  padding: 0 0.5em;
-    //}
-    .contentWrapper {
-      max-width: calc(100% - ${({ theme }) => theme.sidebarWidth}px);
-      margin-left: auto;
-    }
-  }
 `

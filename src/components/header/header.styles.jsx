@@ -8,25 +8,55 @@ export const Wrapper = styled.nav`
   width: 100%;
   z-index: 9999;
   background-color: white;
-  display: none;
+  //display: none;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 
-  .logo {
-    position: absolute;
-    height: 100%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  .navDesktop {
+    display: none;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+
+    .navLink {
+      padding: 0 1rem;
+      font-weight: 400;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      img {
+        position: absolute;
+        width: 80px;
+        height: auto;
+      }
+    }
+    .secondary {
+      margin-left: 1rem;
+    }
   }
 
-  ${({ theme }) => theme.breakpoints.down("lg")} {
+  .navMobile {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    .logo {
+      position: absolute;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
-  ${({ theme }) => theme.breakpoints.up("lg")} {
-    padding: 1em 0;
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    .navMobile {
+      display: none;
+    }
+    .navDesktop {
+      display: flex;
+      align-items: center;
+    }
   }
 `
 
@@ -47,6 +77,6 @@ export const MenuButton = styled(IconButton)`
 
 export const Logo = styled.img`
   width: 70px;
-  height: auto;
+  height: 100%;
   object-fit: contain !important;
 `

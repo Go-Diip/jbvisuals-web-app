@@ -9,6 +9,16 @@ export const Wrapper = styled.nav`
   z-index: 9999;
   background-color: white;
   display: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  .logo {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   ${({ theme }) => theme.breakpoints.down("lg")} {
     display: flex;
@@ -17,7 +27,7 @@ export const Wrapper = styled.nav`
 
   ${({ theme }) => theme.breakpoints.up("lg")} {
     padding: 1em 0;
-  } ;
+  }
 `
 
 export const NavWrapper = styled.div`
@@ -36,7 +46,7 @@ export const MenuButton = styled(IconButton)`
 `
 
 export const Logo = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: auto;
   object-fit: contain !important;
 `

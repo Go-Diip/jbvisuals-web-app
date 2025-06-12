@@ -8,15 +8,16 @@ export const CustomButton = styled(Button)`
     theme.palette[color]
       ? theme.palette[color].main
       : theme.palette.primary.main};
-  padding: 0.5em 1.5em;
+  padding: 0.5rem 1rem;
   border: 1px solid transparent;
   font-size: ${({ theme }) => theme.typography.pxToRem(14)};
   font-weight: 600 !important;
-  border-radius: 4px;
+  border-radius: 20px;
+  text-transform: none;
 
-  ${({ theme }) => theme.breakpoints.up("md")} {
-    padding: 0.5em 3em;
-  }
+  // ${({ theme }) => theme.breakpoints.up("md")} {
+  //   padding: 0.5em 3em;
+  // }
   &.light {
     background-color: white;
     color: ${({ theme }) => theme.palette.primary.main};

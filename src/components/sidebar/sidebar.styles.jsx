@@ -15,10 +15,14 @@ export const Wrapper = styled.nav`
   ${({ theme }) => theme.breakpoints.up("lg")} {
     display: flex;
     flex-direction: column;
-  } ;
+  }
 `
 
-export const TopWrapper = styled.div``
+export const TopWrapper = styled.div`
+  .cta {
+    margin-top: 1rem;
+  }
+`
 
 export const LinkItem = styled(CustomLink)`
   color: ${({ theme }) => theme.palette.main};

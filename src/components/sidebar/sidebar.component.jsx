@@ -3,6 +3,8 @@ import * as S from "./sidebar.styles.jsx"
 import Typography from "@mui/material/Typography"
 import CustomLink from "../custom-link/custom-link.component"
 import { Fade } from "react-awesome-reveal"
+import CustomButton from "../custom-button/custom-button.component"
+import { Box } from "@mui/material"
 
 const Sidebar = ({ isHome }) => {
   return (
@@ -17,7 +19,12 @@ const Sidebar = ({ isHome }) => {
         )}
         <S.LinkItem url="/about/">About</S.LinkItem>
         <S.LinkItem url="/blog/">Blog</S.LinkItem>
-        <S.LinkItem url="/contact/">Contact</S.LinkItem>
+        {/*<S.LinkItem url="/contact/">Contact</S.LinkItem>*/}
+        <Box display="flex" justifyContent="center">
+          <CustomButton className="cta" href="/contact/">
+            Get Your Free Quote
+          </CustomButton>
+        </Box>
       </S.TopWrapper>
       <S.MiddleWrapper>
         <CustomLink url="/">

@@ -5,6 +5,7 @@ import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import CustomLink from "../custom-link/custom-link.component"
 import MobileHeader from "./mobile-header/mobile-header.component"
+import CustomButton from "../custom-button/custom-button.component"
 
 const Header = ({ isHome }) => {
   const [isActiveMenu, setIsActiveMenu] = useState(false)
@@ -15,14 +16,14 @@ const Header = ({ isHome }) => {
     <S.Wrapper>
       <Container>
         <S.NavWrapper>
-          <CustomLink url="/">
-            <S.Logo src="/logo.png" alt="Logo" />
+          <S.MenuButton onClick={handleToggleMenu}>
+            {isActiveMenu ? <CloseIcon /> : <MenuIcon />}
+          </S.MenuButton>
+          <CustomLink className="logo" url="/">
+            <S.Logo src="/logo.png" alt="Jbvisuals" />
           </CustomLink>
-          <Box sx={{ display: { lg: "none", xs: "block" } }}>
-            <S.MenuButton onClick={handleToggleMenu}>
-              {isActiveMenu ? <CloseIcon /> : <MenuIcon />}
-            </S.MenuButton>
-          </Box>
+          <CustomButton href="/contact/">Free Quote</CustomButton>
+          {/*</Box>*/}
         </S.NavWrapper>
       </Container>
       <MobileHeader

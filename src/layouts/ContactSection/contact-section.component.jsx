@@ -23,7 +23,7 @@ const ContactSection = ({ topDescription, bottomDescription }) => {
         </Fade>
         <Fade triggerOnce>
           <Grid container>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
               <S.GridWrapper className="lightGray">
                 <S.Title>Contact Info</S.Title>
                 <S.Line className="left" />
@@ -57,7 +57,7 @@ const ContactSection = ({ topDescription, bottomDescription }) => {
                 </S.InfoWrapper>
               </S.GridWrapper>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
               <S.GridWrapper className="darkGray">
                 {successMessage ? (
                   <Typography

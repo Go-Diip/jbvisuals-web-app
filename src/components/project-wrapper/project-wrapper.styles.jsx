@@ -26,12 +26,16 @@ export const Location = styled.span`
   font-weight: 300;
   letter-spacing: 0.7px;
   line-height: 28px;
+  margin-bottom: 1rem;
+  display: block;
 `
 
 export const SocialWrapper = styled.div`
   //position: fixed;
   //padding: 4em;
   padding: 5em 0 0 2em;
+  position: sticky;
+  top: 0;
 `
 
 export const Architect = styled.span`

@@ -27,6 +27,19 @@ export default function HTML(props) {
               gtag('config', 'G-2S52WXEWCS');`,
               }}
             />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/684a292e93cc24190e4c75b9/1itgr1nka';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+            })();`,
+              }}
+            />
           </>
         )}
         {props.headComponents}

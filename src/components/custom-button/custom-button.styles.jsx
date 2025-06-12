@@ -18,6 +18,16 @@ export const CustomButton = styled(Button)`
   // ${({ theme }) => theme.breakpoints.up("md")} {
   //   padding: 0.5em 3em;
   // }
+
+  &.secondary {
+    background-color: ${({ theme }) => theme.palette.secondary.main};
+    &:hover {
+      //background-color: ${darken("#fd3c34", 0.1)} !important;
+      background-color: ${({ theme }) =>
+        darken(theme.palette.secondary.main, 0.1)} !important;
+    }
+  }
+
   &.light {
     background-color: white;
     color: ${({ theme }) => theme.palette.primary.main};

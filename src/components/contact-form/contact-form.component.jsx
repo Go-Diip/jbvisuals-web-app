@@ -93,7 +93,9 @@ const ContactForm = ({ setSuccessMessage }) => {
           </Typography>
         )}
         <S.ButtonWrapper>
-          <S.Button type="submit">Send</S.Button>
+          <S.Button className="secondary" type="submit">
+            Send
+          </S.Button>
         </S.ButtonWrapper>
       </form>
     </S.Wrapper>

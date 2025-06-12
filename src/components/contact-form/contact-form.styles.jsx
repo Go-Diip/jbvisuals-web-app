@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `
 
 export const Button = styled(CustomButton)`
-  border-radius: 0;
+  //border-radius: 0;
 `
 
 export const ButtonWrapper = styled.div`

@@ -21,7 +21,7 @@ const Sidebar = ({ isHome }) => {
         <S.LinkItem url="/blog/">Blog</S.LinkItem>
         {/*<S.LinkItem url="/contact/">Contact</S.LinkItem>*/}
         <Box display="flex" justifyContent="center">
-          <CustomButton className="cta" href="/contact/">
+          <CustomButton className="secondary cta" href="/contact/">
             Get Your Free Quote
           </CustomButton>
         </Box>

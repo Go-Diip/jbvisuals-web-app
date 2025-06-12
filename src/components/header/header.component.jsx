@@ -22,7 +22,9 @@ const Header = ({ isHome }) => {
           <CustomLink className="logo" url="/">
             <S.Logo src="/logo.png" alt="Jbvisuals" />
           </CustomLink>
-          <CustomButton href="/contact/">Free Quote</CustomButton>
+          <CustomButton className="secondary" href="/contact/">
+            Free Quote
+          </CustomButton>
           {/*</Box>*/}
         </S.NavWrapper>
       </Container>

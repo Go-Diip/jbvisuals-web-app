@@ -22,7 +22,6 @@ export const CustomButton = styled(Button)`
   &.secondary {
     background-color: ${({ theme }) => theme.palette.secondary.main};
     &:hover {
-      //background-color: ${darken("#fd3c34", 0.1)} !important;
       background-color: ${({ theme }) =>
         darken(theme.palette.secondary.main, 0.1)} !important;
     }

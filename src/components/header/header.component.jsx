@@ -15,7 +15,7 @@ const Header = ({ isHome }) => {
   }
   return (
     <S.Wrapper>
-      <Container>
+      <Container maxWidth="xl">
         <S.NavWrapper>
           <Box className="navMobile">
             <S.MenuButton onClick={handleToggleMenu}>

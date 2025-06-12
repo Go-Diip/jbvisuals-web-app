@@ -34,19 +34,38 @@ function SEO({ data, meta }) {
     openGraphAuthor,
   } = data
 
-  const schemaOrgJSONLD = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    url: "https://www.jbvisuals.co",
-    name: title,
-    description: opengraphDescription,
-  }
+  const isContactPage = canonical === "/contact/"
+  const schemaOrgJSONLD = isContactPage
+    ? {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        name: "Contact JB Visuals",
+        description:
+          "Get a free quote for 3D architectural visualizations from JB Visuals.",
+        url: "https://www.jbvisuals.co/contact/",
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+593-96-909-7789",
+          contactOption: "TollFree",
+          areaServed: ["US", "UK", "CA", "AU", "EU"],
+          availableLanguage: ["English", "Spanish"],
+        },
+        email: "hello@jbvisuals.co",
+      }
+    : {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        url: "https://www.jbvisuals.co",
+        name: title,
+        description: opengraphDescription,
+      }
 
   return (
     <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(schemaOrgJSONLD)}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrgJSONLD) }}
+      />
       {title && <title>{title}</title>}
 
       {/* General tags */}
@@ -67,7 +86,12 @@ function SEO({ data, meta }) {
 
       {/* OpenGraph tags */}
 
-      {opengraphUrl && <meta property="og:url" content={`https://www.jbvisuals.co${opengraphUrl}`} />}
+      {opengraphUrl && (
+        <meta
+          property="og:url"
+          content={`https://www.jbvisuals.co${opengraphUrl}`}
+        />
+      )}
 
       {opengraphTitle && <meta property="og:title" content={opengraphTitle} />}
 

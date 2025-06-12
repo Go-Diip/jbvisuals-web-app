@@ -24,6 +24,8 @@ const ContactForm = ({ setSuccessMessage }) => {
     setErrorMessage("")
     setIsLoading(true)
 
+    console.log("data", data)
+
     const form = new FormData()
     form.append("yourName", data.yourName)
     form.append("email", data.email)

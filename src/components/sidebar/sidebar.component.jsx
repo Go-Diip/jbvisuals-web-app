@@ -33,7 +33,7 @@ const Sidebar = ({ isHome }) => {
       </S.MiddleWrapper>
       <S.BottomWrapper>
         <Typography>
-          ©{new Date().getFullYear()} JB Visuals. <br /> All Rights Reserved
+          ©{new Date().getFullYear()} Jbvisuals. <br /> All Rights Reserved
         </Typography>
       </S.BottomWrapper>
     </S.Wrapper>

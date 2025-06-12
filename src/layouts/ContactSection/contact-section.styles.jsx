@@ -9,21 +9,34 @@ export const Wrapper = styled(SectionWrapper)`
 `
 
 export const ContentWrapper = styled.div`
-  padding: 4rem 0;
+  padding: 2rem 0;
   text-align: center;
   max-width: 750px;
   margin: auto;
 
   ${({ theme }) => theme.breakpoints.up("md")} {
-    padding: 8rem 0;
-  } ;
+    padding: 4rem 0;
+  }
+
+  h2 {
+    font-weight: 600;
+    margin: 1rem;
+    font-size: ${({ theme }) => theme.typography.pxToRem(26)};
+    ${({ theme }) => theme.breakpoints.up("md")} {
+      font-size: ${({ theme }) => theme.typography.pxToRem(32)};
+    }
+  }
 `
 
-export const TopDescription = styled(Typography)`
+export const TopDescription = styled.h1`
   font-size: ${({ theme }) => theme.typography.pxToRem(36)};
   font-weight: 300;
   letter-spacing: 0.5px;
   line-height: 42px;
+  font-size: ${({ theme }) => theme.typography.pxToRem(28)};
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    font-size: ${({ theme }) => theme.typography.pxToRem(38)};
+  }
 `
 
 export const BottomDescription = styled(Typography)`
@@ -74,14 +87,24 @@ export const GridWrapper = styled.div`
 
   ${({ theme }) => theme.breakpoints.up("md")} {
     padding: 4rem;
-  } ;
+  }
 `
 
 export const Title = styled.h2`
-  font-size: ${({ theme }) => theme.typography.pxToRem(36)};
+  font-size: ${({ theme }) => theme.typography.pxToRem(28)};
   font-weight: 300;
   letter-spacing: 0.5px;
   line-height: 42px;
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    font-size: ${({ theme }) => theme.typography.pxToRem(32)};
+  }
+`
+
+export const ContactInfoText = styled(Typography)`
+  font-size: 18px;
+  a {
+    color: black;
+  }
 `
 
 export const RightWrapper = styled.div`

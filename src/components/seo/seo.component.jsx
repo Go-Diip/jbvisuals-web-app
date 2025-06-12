@@ -39,7 +39,7 @@ function SEO({ data, meta }) {
     ? {
         "@context": "https://schema.org",
         "@type": "ContactPage",
-        name: "Contact JB Visuals",
+        name: "Contact Jbvisuals",
         description:
           "Get a free quote for 3D architectural visualizations from JB Visuals.",
         url: "https://www.jbvisuals.co/contact/",
@@ -54,10 +54,17 @@ function SEO({ data, meta }) {
       }
     : {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        url: "https://www.jbvisuals.co",
-        name: title,
-        description: opengraphDescription,
+        "@type": "ProfessionalService",
+        name: "Jbvisuals",
+        description:
+          "Jbvisuals provides premium 3D architectural visualization services worldwide.",
+        url: "https://www.jbvisuals.co/",
+        areaServed: ["US", "UK", "CA", "AU", "EU"],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+593-96-909-7789",
+          email: "hello@jbvisuals.co",
+        },
       }
 
   return (

@@ -13,8 +13,11 @@ const HomeHero = ({ images }) => {
   return (
     <S.Wrapper>
       <h1 className="visuallyhidden">
-        Jbvisuals - 3D Architectural visualization
+        Premium 3D Architectural Visualizations by JB Visuals
       </h1>
+      <h2 className="visuallyhidden">
+        Transform Your Projects with Stunning Renders"
+      </h2>
       <Swiper
         modules={[Autoplay, EffectFade, Pagination]}
         effect="fade"

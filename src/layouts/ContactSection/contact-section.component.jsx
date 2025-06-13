@@ -41,8 +41,7 @@ const ContactSection = ({ topDescription, bottomDescription }) => {
                   {/*  <i>+41 76 583 83 61</i>*/}
                   {/*</S.InfoLink>*/}
                   <S.ContactInfoText>
-                    Jbvisuals serves clients across worldwide. <br /> Reach us
-                    at{" "}
+                    Jbvisuals serves clients worldwide. <br /> Reach us at{" "}
                     <a href="tel:+593969097789">+593-96-909-7789 (Ecuador)</a>,
                     or email{" "}
                     <a href="mailto:hello@jbvisuals.co">hello@jbvisuals.co</a>.

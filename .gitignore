@@ -58,6 +58,7 @@ typings/
 
 # ignore dev and local .env
 .env.development
+.env.production
 .env.local
 
 # gatsby files
